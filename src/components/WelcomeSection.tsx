@@ -8,7 +8,7 @@ export default function WelcomeSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -36,6 +36,7 @@ export default function WelcomeSection() {
               <p className="hidden md:block text-muted-foreground leading-relaxed">
                 Whether you are stargazing by the outdoor fireplace, enjoying a traditional Bedouin Zarb dinner, or exploring the red sand dunes on a 4x4 Jeep tour, we offer a peaceful and unforgettable Bedouin experience with world-class hospitality.
               </p>
+
             </div>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-2">
@@ -54,7 +55,7 @@ export default function WelcomeSection() {
           </motion.div>
 
           {/* Image Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -62,28 +63,28 @@ export default function WelcomeSection() {
             className="flex-1 relative"
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="/images/wadirum_camp_exterior.jpg" 
-                alt="Exterior of dome tents and Bedouin tents against the mountain backdrop" 
+              <img
+                src="/images/wadirum_camp_exterior.jpg"
+                alt="Exterior of dome tents and Bedouin tents against the mountain backdrop"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-deep-navy/10" />
             </div>
-            
+
             {/* Floating Image */}
-            <motion.div 
+            <motion.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="absolute -bottom-12 -left-12 w-2/3 aspect-square rounded-2xl overflow-hidden shadow-xl border-4 border-warm-sand hidden md:block"
             >
-              <img 
-                src="/images/wadirum_room_interior.jpg" 
+              <img
+                src="/images/wadirum_room_interior.jpg"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/images/wadirum_mountains.jpg";
                 }}
-                alt="Luxury desert tent interior with mountain view" 
+                alt="Luxury desert tent interior with mountain view"
                 className="w-full h-full object-cover"
               />
             </motion.div>

@@ -40,8 +40,8 @@ export default function AccommodationShowcase() {
     <section id="accommodations" className="py-24 md:py-32 px-4 md:px-8 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-20">
-
-
+          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Our Accommodations</p>
+          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-4 md:mb-6">Exclusive 5-Star Desert Glamping</h2>
           <p className="hidden md:block text-muted-foreground leading-relaxed">
             Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Featuring family and interconnected options, every unit provides a quiet, private space with stunning mountain views.
           </p>
