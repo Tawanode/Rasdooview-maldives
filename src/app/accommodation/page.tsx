@@ -2,7 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wifi, Wind, Coffee, Utensils, Mountain, Bath, Flame, ShieldCheck, Compass } from "lucide-react";
+import { 
+  ArrowRight, 
+  Wifi, 
+  Wind, 
+  Coffee, 
+  Utensils, 
+  Mountain, 
+  Bath, 
+  Flame, 
+  ShieldCheck, 
+  Compass, 
+  Sparkles, 
+  Users, 
+  Crown 
+} from "lucide-react";
 
 export default function AccommodationPage() {
   return (
@@ -16,7 +30,7 @@ export default function AccommodationPage() {
           transition={{ duration: 0.6 }}
           className="mb-12 max-w-3xl"
         >
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">5-Star Desert Glamping</p>
+
           <h1 className="font-heading text-5xl md:text-6xl text-deep-navy mb-6">
             Our Luxury <span className="text-muted-foreground/60">Tents & Units</span>
           </h1>
@@ -34,38 +48,38 @@ export default function AccommodationPage() {
         >
           {/* Left Large Image */}
           <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden aspect-square md:aspect-auto">
-            <img 
-              src="/images/wadirum_room_interior.jpg" 
+            <img
+              src="/images/wadirum_room_interior.jpg"
               onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_camp_exterior.jpg"; }}
-              alt="Double Room with Mountain View at Wadi Rum Bella Rose Luxury Camp" 
-              className="w-full h-full object-cover" 
+              alt="Double Room with Mountain View at Wadi Rum Bella Rose Luxury Camp"
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Top Right Image */}
           <div className="rounded-3xl overflow-hidden aspect-[4/3]">
-            <img 
-              src="/images/wadirum_bathroom.jpg" 
+            <img
+              src="/images/wadirum_bathroom.jpg"
               onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_sunset.jpg"; }}
-              alt="Private Ensuite Bathroom with Walk-in Shower" 
-              className="w-full h-full object-cover" 
+              alt="Private Ensuite Bathroom with Walk-in Shower"
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Bottom Right Two Images */}
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img 
-                src="/images/wadirum_room_deluxe.jpg" 
+              <img
+                src="/images/wadirum_room_deluxe.jpg"
                 onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_mountains.jpg"; }}
-                alt="Superior Deluxe Twin Room" 
-                className="w-full h-full object-cover" 
+                alt="Superior Deluxe Twin Room"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img 
-                src="/images/wadirum_campfire.jpg" 
+              <img
+                src="/images/wadirum_campfire.jpg"
                 onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_stargazing.jpg"; }}
-                alt="Outdoor Fireplace & Camp Grounds" 
-                className="w-full h-full object-cover" 
+                alt="Outdoor Fireplace & Camp Grounds"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -82,7 +96,7 @@ export default function AccommodationPage() {
             <div>
               <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-3">Unit Highlights</p>
               <h2 className="font-heading text-3xl md:text-4xl text-deep-navy mb-4">Intimate 11-Unit Desert Haven</h2>
-              <p className="text-muted-foreground">Each unit offers an intimate and exclusive alternative to tour-bus camps, equipped with individual air conditioning, soundproof walls, and private ensuite bathrooms.</p>
+
             </div>
             <Button
               className="bg-[#0b382d] hover:bg-[#07241c] text-white rounded-md px-8 py-6 text-sm font-medium tracking-wide transition-colors shrink-0"
@@ -158,36 +172,33 @@ export default function AccommodationPage() {
               <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Property Categories</p>
               <h3 className="font-heading text-3xl text-deep-navy mb-10">Our Room Categories</h3>
 
-              <div className="space-y-10 mb-12">
+              <div className="space-y-6 mb-12">
                 {[
-                  { 
-                    icon: Mountain, 
-                    title: "Double Room with Mountain View", 
-                    desc: "An intimate and peaceful desert escape featuring private ensuite walk-in shower, individual air conditioning, soundproof walls, coffee machine, and a private terrace overlooking the red mountains." 
+                  {
+                    icon: Mountain,
+                    title: "Double Room with Mountain View",
                   },
-                  { 
-                    icon: Wind, 
-                    title: "Superior Deluxe Double or Twin Room", 
-                    desc: "Spacious luxury unit with flexible double or twin bedding, individual air conditioning, soundproofing, plush bathrobes, work desk, coffee station, and expansive desert rock vistas." 
+                  {
+                    icon: Sparkles,
+                    title: "Superior Deluxe Double or Twin Room",
                   },
-                  { 
-                    icon: ShieldCheck, 
-                    title: "Triple Room with Mountain View", 
-                    desc: "Ideal for friends or small families seeking desert comfort. Offers comfortable triple bedding, soundproof tranquility, individual air conditioning, private ensuite bath, and sweeping mountain panoramas." 
+                  {
+                    icon: Users,
+                    title: "Triple Room with Mountain View",
                   },
-                  { 
-                    icon: Flame, 
-                    title: "Luxury Triple Room", 
-                    desc: "Our most premium glamping category featuring a cozy fireplace in select units, private ensuite bathroom, individual air conditioning, and a private terrace overlooking the magnificent Wadi Rum cliffs." 
+                  {
+                    icon: Crown,
+                    title: "Luxury Triple Room",
                   }
                 ].map((reason, i) => (
-                  <div key={i} className="flex gap-6 items-start">
-                    <div className="bg-warm-sand p-3 rounded-full shrink-0">
-                      <reason.icon className="text-primary" size={24} />
+                  <div key={i} className="flex gap-5 sm:gap-6 items-center p-3 sm:p-3.5 rounded-2xl hover:bg-[#FAF6F0] transition-colors">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#FAF6EE] border border-[#E4D9C7] flex items-center justify-center text-[#A8582C] shrink-0 shadow-[0_2px_8px_rgba(168,88,44,0.06)]">
+                      <reason.icon size={22} strokeWidth={1.6} />
                     </div>
                     <div>
-                      <h4 className="text-deep-navy font-bold text-lg mb-2">{reason.title}</h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{reason.desc}</p>
+                      <h4 className="font-[family-name:var(--font-playfair)] text-lg sm:text-xl text-[#221C18] font-normal tracking-tight">
+                        {reason.title}
+                      </h4>
                     </div>
                   </div>
                 ))}

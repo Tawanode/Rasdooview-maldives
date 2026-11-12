@@ -33,7 +33,7 @@ export default function ActivitiesExcursions() {
     <section id="experiences" className="py-24 md:py-32 px-4 md:px-8 bg-soft-beige/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Desert Adventures</p>
+
           <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-4 md:mb-6">Unforgettable Desert Experiences</h2>
           <p className="hidden md:block text-muted-foreground leading-relaxed">
             From thrilling 4x4 Jeep tours across red dunes to quiet evenings of Bedouin music by the open fire, our tour desk will curate your ideal desert itinerary.

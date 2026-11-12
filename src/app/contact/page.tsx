@@ -189,9 +189,7 @@ export default function ContactPage() {
                       <p className="font-[family-name:var(--font-outfit)] text-sm text-[#4A3E37] leading-relaxed">
                         Check-in: <span className="font-medium text-[#221C18]">14:00 - 23:00</span> &bull; Check-out: <span className="font-medium text-[#221C18]">07:00 - 11:30</span>
                       </p>
-                      <p className="font-[family-name:var(--font-outfit)] text-xs text-[#6E5D53] pt-1">
-                        Free private parking on-site. Complimentary 4x4 luggage transfer upon arrival.
-                      </p>
+
                     </div>
                   </div>
                 </div>
@@ -216,9 +214,7 @@ export default function ContactPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl text-[#221C18] font-normal tracking-tight">
                     Send an Inquiry
                   </h3>
-                  <p className="font-[family-name:var(--font-outfit)] text-sm text-[#6E5D53] mt-2 font-light">
-                    Share your ideal dates or special requests. Our concierge responds promptly within a few hours.
-                  </p>
+
                 </div>
 
                 {isSubmitted ? (
