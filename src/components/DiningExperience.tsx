@@ -65,8 +65,11 @@ export default function DiningExperience() {
                 <h4 className="font-heading text-xl text-deep-navy mb-4">Dining Highlights</h4>
                 <ul className="space-y-2">
                   {diningHighlights.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1 h-1 rounded-full bg-primary" /> {item}
+                    <li 
+                      key={i} 
+                      className={`items-center gap-2 text-sm text-muted-foreground ${i >= diningHighlights.length - 2 ? "hidden md:flex" : "flex"}`}
+                    >
+                      <div className="w-1 h-1 rounded-full bg-primary shrink-0" /> <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -75,8 +78,11 @@ export default function DiningExperience() {
                 <h4 className="font-heading text-xl text-deep-navy mb-4">Services & Comforts</h4>
                 <ul className="space-y-2">
                   {diningServices.map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1 h-1 rounded-full bg-primary" /> {item}
+                    <li 
+                      key={i} 
+                      className={`items-center gap-2 text-sm text-muted-foreground ${i >= diningServices.length - 3 ? "hidden md:flex" : "flex"}`}
+                    >
+                      <div className="w-1 h-1 rounded-full bg-primary shrink-0" /> <span>{item}</span>
                     </li>
                   ))}
                 </ul>
