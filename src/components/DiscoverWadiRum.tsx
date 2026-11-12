@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Plane, Ship, MapPin } from "lucide-react";
+import { Plane, Car, MapPin } from "lucide-react";
 
-export default function DiscoverPraslin() {
+export default function DiscoverWadiRum() {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -27,16 +27,16 @@ export default function DiscoverPraslin() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-6"
           >
-            <p className="text-primary font-medium tracking-widest uppercase text-sm">Discover the Wonders</p>
+            <p className="text-primary font-medium tracking-widest uppercase text-sm">Location & Setting</p>
             <h2 className="font-heading text-4xl md:text-5xl leading-tight text-white">
-              The Magic of <br />
-              <span className="font-accent italic text-primary bg-white px-3 py-1 inline-block mt-2">Praslin Island</span>
+              Explore the Wonders <br />
+              <span className="font-accent italic text-primary bg-white px-3 py-1 inline-block mt-2">of Wadi Rum</span>
             </h2>
             <p className="text-warm-sand/80 leading-relaxed text-lg pt-4">
-              Step away from the ordinary and experience the true Seychelles. Praslin is a breathtaking tropical island that offers a perfect blend of natural wonders, stunning white-sand beaches like Anse Georgette, and world-class marine biodiversity just offshore.
+              Perfectly positioned in the Disah district of the Wadi Rum Protected Area, our camp serves as the ultimate base for exploring iconic red sand dunes and ancient rock formations.
             </p>
             <p className="text-warm-sand/80 leading-relaxed">
-              Stroll through lush nature trails at Vallée de Mai, meet friendly locals, relax on pristine beaches, and swim in crystal-clear waters. Here, you get the premium island lifestyle at your own pace.
+              Tucked away from crowded tourist routes, our intimate 11-unit camp provides immediate access to classic Wadi Rum desert tour routes, towering sandstone cliffs, and awe-inspiring night skies, all while ensuring total tranquility and authentic Bedouin hospitality.
             </p>
           </motion.div>
 
@@ -49,8 +49,8 @@ export default function DiscoverPraslin() {
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <img 
-                src="/images/seychelles_vallee_de_mai.png" 
-                alt="Praslin Island Nature" 
+                src="/images/wadirum_mountains.jpg" 
+                alt="Wadi Rum Protected Area dramatic red sandstone mountains" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -66,8 +66,8 @@ export default function DiscoverPraslin() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h3 className="font-heading text-3xl md:text-4xl text-white mb-4">Getting To Paradise</h3>
-            <p className="text-warm-sand/80">We are perfectly located on Amitié Beach for a seamless arrival.</p>
+            <h3 className="font-heading text-3xl md:text-4xl text-white mb-4">Reaching Our Desert Camp</h3>
+            <p className="text-warm-sand/80">Located on Wadi Rum Road, Disah Area, Wadi Rum Protected Area, Jordan.</p>
           </motion.div>
 
           <div className="relative">
@@ -84,8 +84,8 @@ export default function DiscoverPraslin() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="md:w-[45%] md:text-right pl-20 md:pl-0"
                 >
-                  <h4 className="font-heading text-xl text-white">Praslin Island Airport</h4>
-                  <p className="text-sm text-warm-sand/60 mt-1">Arrival in Praslin (PRI)</p>
+                  <h4 className="font-heading text-xl text-white">King Hussein Int'l Airport (Aqaba)</h4>
+                  <p className="text-sm text-warm-sand/60 mt-1">61 km from our camp in Wadi Rum</p>
                 </motion.div>
                 <div className="absolute left-0 top-0 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10">
                   <motion.div 
@@ -120,7 +120,7 @@ export default function DiscoverPraslin() {
                         : "bg-deep-navy text-primary shadow-none"
                     }`}
                   >
-                    <Ship size={24} />
+                    <Car size={24} />
                   </motion.div>
                 </div>
                 <motion.div 
@@ -130,8 +130,8 @@ export default function DiscoverPraslin() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="md:w-[45%] pl-20 md:pl-0 text-left"
                 >
-                  <h4 className="font-heading text-xl text-white">Island Transfer</h4>
-                  <p className="text-sm text-warm-sand/80 mt-1">Short 5-minute drive to Amitié Beach</p>
+                  <h4 className="font-heading text-xl text-white">Disah Desert Gateway</h4>
+                  <p className="text-sm text-warm-sand/80 mt-1">Scenic desert drive with free on-site private parking</p>
                 </motion.div>
               </div>
 
@@ -144,8 +144,8 @@ export default function DiscoverPraslin() {
                   transition={{ duration: 0.6, delay: 1.0 }}
                   className="md:w-[45%] md:text-right pl-20 md:pl-0"
                 >
-                  <h4 className="font-heading text-xl text-white">Tropical Beach House Praslin</h4>
-                  <p className="text-sm text-warm-sand/60 mt-1">Welcome drinks & check-in</p>
+                  <h4 className="font-heading text-xl text-white">Wadi Rum Bella Rose Luxury Camp</h4>
+                  <p className="text-sm text-warm-sand/60 mt-1">Bedouin welcome tea, 24-hour reception & check-in</p>
                 </motion.div>
                 <div className="absolute left-0 top-0 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10">
                   <motion.div 

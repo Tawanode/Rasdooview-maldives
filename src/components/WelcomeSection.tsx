@@ -16,25 +16,28 @@ export default function WelcomeSection() {
             className="flex-1 space-y-8"
           >
             <div>
-              <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Our Story</p>
+              <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">About Our Camp</p>
               <h2 className="font-heading text-4xl md:text-5xl text-deep-navy leading-tight mb-6">
-                Your Island Home <br />
-                <span className="font-accent italic text-primary">Away From Home</span>
+                Welcome to <br />
+                <span className="font-accent italic text-primary">Wadi Rum Bella Rose Luxury Camp</span>
               </h2>
               <div className="w-20 h-[1px] bg-primary/30" />
             </div>
 
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Located directly on the stunning shores of Amitié Beach, Tropical Beach House Praslin offers spacious self-catering apartments surrounded by lush tropical gardens and breathtaking ocean views.
+                Experience the magic of the Jordanian desert at Wadi Rum Bella Rose Luxury Camp. Tucked away in the peaceful Disah area, our camp offers an intimate and exclusive alternative to massive tour-bus camps, featuring just 11 thoughtfully designed units.
               </p>
               <p>
-                Whether you're planning a romantic escape or a family holiday, you'll enjoy the freedom, comfort, and authentic Seychellois hospitality that make every stay unforgettable.
+                Designed for travelers who seek both adventure and comfort, our accommodations provide modern luxuries like air conditioning, soundproof walls, and private ensuite bathrooms right in the middle of the desert.
+              </p>
+              <p>
+                Whether you are stargazing by the outdoor fireplace, enjoying a traditional Bedouin Zarb dinner, or exploring the red sand dunes on a 4x4 Jeep tour, we offer a peaceful and unforgettable Bedouin experience with world-class hospitality.
               </p>
             </div>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-deep-navy font-medium pt-4">
-              {['Beachfront Location', 'Self-Catering Freedom', 'Tropical Gardens', 'Direct Beach Access'].map((item, i) => (
+              {['Peaceful Disah Location', 'Only 11 Luxury Units', 'Stunning Mountain Views', 'Authentic Bedouin Hospitality'].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   {item}
@@ -53,8 +56,8 @@ export default function WelcomeSection() {
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="/images/seychelles_bbq_garden.png" 
-                alt="Authentic beachfront living experience" 
+                src="/images/wadirum_camp_exterior.jpg" 
+                alt="Exterior of dome tents and Bedouin tents against the mountain backdrop" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-deep-navy/10" />
@@ -69,8 +72,11 @@ export default function WelcomeSection() {
               className="absolute -bottom-12 -left-12 w-2/3 aspect-square rounded-2xl overflow-hidden shadow-xl border-4 border-warm-sand hidden md:block"
             >
               <img 
-                src="/images/seychelles_apartment.png" 
-                alt="Spacious self-catering apartments" 
+                src="/images/wadirum_room_interior.jpg" 
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/images/wadirum_mountains.jpg";
+                }}
+                alt="Luxury desert tent interior with mountain view" 
                 className="w-full h-full object-cover"
               />
             </motion.div>

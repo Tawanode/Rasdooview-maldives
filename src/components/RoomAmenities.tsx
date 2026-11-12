@@ -1,32 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wind, VolumeX, Snowflake, Tv, Wifi, Shirt, Droplets, Coffee, CupSoda } from "lucide-react";
+import { Wind, VolumeX, Snowflake, Bath, Mountain, Utensils, Wifi, Compass, Clock, Flame, Coffee, ShieldCheck } from "lucide-react";
 
 export default function RoomAmenities() {
   const categories = [
     {
-      title: "Comfort",
+      title: "Room Comfort",
       items: [
-        { icon: <Snowflake size={20} />, name: "Air Conditioning" },
-        { icon: <Wind size={20} />, name: "Ceiling Fans" },
-        { icon: <VolumeX size={20} />, name: "Soundproof Rooms" },
+        { icon: <Snowflake size={20} />, name: "Individual Air Conditioning" },
+        { icon: <VolumeX size={20} />, name: "Soundproof Walls" },
+        { icon: <Bath size={20} />, name: "Walk-in Shower & Toiletries" },
+        { icon: <Mountain size={20} />, name: "Private Mountain View Terrace" },
       ]
     },
     {
-      title: "Convenience",
+      title: "Dining Experience",
       items: [
-        { icon: <Tv size={20} />, name: "Flat Screen TV" },
-        { icon: <Wifi size={20} />, name: "Free WiFi" },
-        { icon: <Shirt size={20} />, name: "Wardrobe" },
+        { icon: <Utensils size={20} />, name: "Traditional Bedouin Zarb Dinners" },
+        { icon: <Coffee size={20} />, name: "Continental, Irish & Buffet Breakfast" },
+        { icon: <Utensils size={20} />, name: "Middle Eastern, African & Catalan Cuisine" },
+        { icon: <Flame size={20} />, name: "Outdoor BBQ & Room Service" },
       ]
     },
     {
-      title: "Complimentary",
+      title: "Desert Activities & Service",
       items: [
-        { icon: <Droplets size={20} />, name: "Drinking Water" },
-        { icon: <Coffee size={20} />, name: "Tea & Coffee" },
-        { icon: <CupSoda size={20} />, name: "Mini Fridge" },
+        { icon: <Wifi size={20} />, name: "Exceptional Free Wi-Fi" },
+        { icon: <Compass size={20} />, name: "4x4 Jeep Tours & Camel Rides" },
+        { icon: <Flame size={20} />, name: "Evening Campfire & Bedouin Music" },
+        { icon: <Clock size={20} />, name: "24-Hour Front Desk & Free Parking" },
       ]
     }
   ];
@@ -35,7 +38,8 @@ export default function RoomAmenities() {
     <section className="py-16 md:py-24 px-4 md:px-8 bg-warm-sand border-y border-border">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl text-deep-navy">Every Room Includes</h2>
+          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">Property Features</p>
+          <h2 className="font-heading text-3xl md:text-4xl text-deep-navy">Camp Facilities & Amenities</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

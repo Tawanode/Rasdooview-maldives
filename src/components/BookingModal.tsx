@@ -2,28 +2,31 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar as CalendarIcon, Minus, Plus } from "lucide-react";
+import { X, Minus, Plus } from "lucide-react";
 import { format } from "date-fns";
-import CustomDatePicker from "./CustomDatePicker";
 
 export default function BookingModal() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [checkIn, setCheckIn] = useState<Date | null>(null);
-  const [checkOut, setCheckOut] = useState<Date | null>(null);
-  const [adults, setAdults] = useState(1);
+  const [checkInStr, setCheckInStr] = useState("");
+  const [checkOutStr, setCheckOutStr] = useState("");
+  const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
 
   useEffect(() => {
     const handleOpen = (e: any) => {
       const data = e.detail || {};
-      if (data.checkIn) setCheckIn(data.checkIn);
-      if (data.checkOut) setCheckOut(data.checkOut);
-      if (data.adults !== undefined) setAdults(data.adults);
-      if (data.children !== undefined) setChildren(data.children);
+      if (data.checkIn instanceof Date && !isNaN(data.checkIn.getTime())) {
+        setCheckInStr(format(data.checkIn, "yyyy-MM-dd"));
+      }
+      if (data.checkOut instanceof Date && !isNaN(data.checkOut.getTime())) {
+        setCheckOutStr(format(data.checkOut, "yyyy-MM-dd"));
+      }
+      if (typeof data.adults === "number") setAdults(data.adults);
+      if (typeof data.children === "number") setChildren(data.children);
       setIsOpen(true);
     };
 
@@ -42,168 +45,211 @@ export default function BookingModal() {
     };
   }, [isOpen]);
 
-  const handleRequestBooking = () => {
-    let text = `Hello Tropical Beach House Praslin! I would like to request a booking.%0A%0A`;
-    text += `*Name:* ${name}%0A`;
-    text += `*Email:* ${email}%0A`;
-    text += `*Phone:* ${phone}%0A%0A`;
-    
-    if (checkIn && checkOut) {
-      text += `*Check-in:* ${checkIn.toLocaleDateString()}%0A*Check-out:* ${checkOut.toLocaleDateString()}%0A`;
+  const handleRequestBooking = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    let text = `Hello Wadi Rum Bella Rose Luxury Camp! I would like to request availability.%0A%0A`;
+    if (name) text += `*Name:* ${name}%0A`;
+    if (email) text += `*Email:* ${email}%0A`;
+    if (phone) text += `*Phone:* ${phone}%0A%0A`;
+
+    if (checkInStr && checkOutStr) {
+      text += `*Check-in:* ${checkInStr}%0A*Check-out:* ${checkOutStr}%0A`;
     }
-    text += `*Guests:* ${adults} Adults, ${children} Children.%0A%0APlease let me know the availability and rates.`;
-    
-    window.open(`https://wa.me/2482512515?text=${text}`, "_blank");
+    text += `*Guests:* ${adults} Adults, ${children} Children.%0A%0APlease let me know the availability and rates for your luxury desert units.`;
+
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "962791149240";
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, "_blank");
     setIsOpen(false);
   };
+
+  const todayStr = new Date().toISOString().split("T")[0];
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto"
           onClick={() => setIsOpen(false)}
         >
-          <motion.div 
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0, y: 14 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] relative flex flex-col overflow-hidden"
+            exit={{ scale: 0.95, opacity: 0, y: 14 }}
+            transition={{ type: "spring", damping: 28, stiffness: 350 }}
+            className="bg-white rounded-[28px] sm:rounded-[32px] shadow-2xl w-full max-w-[515px] p-6 sm:p-8 relative flex flex-col border border-zinc-100 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-white z-20 shrink-0">
-          <h2 className="text-2xl font-heading text-deep-navy">Book Your Stay</h2>
-          <button 
-            onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            <X size={24} />
-          </button>
-        </div>
-
-        {/* Form Body */}
-        <div className="p-6 flex flex-col gap-5 overflow-y-auto custom-scrollbar flex-1" data-lenis-prevent="true" onWheel={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()}>
-          
-          {/* Name */}
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-gray-700">Your Name</label>
-            <input 
-              type="text" 
-              placeholder="John Doe" 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-            />
-          </div>
-
-          {/* Email */}
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-gray-700">Email Address</label>
-            <input 
-              type="email" 
-              placeholder="john@example.com" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-            />
-          </div>
-
-          {/* Phone */}
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-semibold text-gray-700">Phone Number</label>
-            <input 
-              type="tel" 
-              placeholder="+1 (555) 000-0000" 
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-            />
-          </div>
-
-          {/* Check In */}
-          <div className="flex flex-col gap-2 relative z-[50]">
-            <label className="text-sm font-semibold text-gray-700">Check In</label>
-            <div className="w-full border border-gray-200 rounded-lg px-4 py-3">
-              <CustomDatePicker 
-                label="Check In"
-                value={checkIn}
-                onChange={(date) => setCheckIn(date)}
-                minDate={new Date()}
-              />
-            </div>
-          </div>
-
-          {/* Check Out */}
-          <div className="flex flex-col gap-2 relative z-[60]">
-            <label className="text-sm font-semibold text-gray-700">Check Out</label>
-            <div className="w-full border border-gray-200 rounded-lg px-4 py-3">
-              <CustomDatePicker 
-                label="Check Out"
-                value={checkOut}
-                onChange={(date) => setCheckOut(date)}
-                minDate={checkIn || new Date()}
-              />
-            </div>
-          </div>
-
-          {/* Guests */}
-          <div className="flex items-center justify-between pt-2">
-            <div className="flex items-center gap-4">
-              <span className="font-semibold text-gray-700 w-12">Adults</span>
-              <div className="flex items-center gap-3">
-                <button 
-                  onClick={() => setAdults(Math.max(1, adults - 1))}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
-                >
-                  <Minus size={14} />
-                </button>
-                <span className="w-4 text-center font-medium text-gray-900">{adults}</span>
-                <button 
-                  onClick={() => setAdults(adults + 1)}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
-                >
-                  <Plus size={14} />
-                </button>
+            {/* Top Header */}
+            <div className="flex items-start justify-between mb-5 sm:mb-6">
+              <div>
+                <span className="font-[family-name:var(--font-montserrat)] text-[0.66rem] sm:text-xs uppercase tracking-[0.22em] font-semibold text-zinc-500 block mb-1">
+                  WADI RUM BELLA ROSE
+                </span>
+                <h2 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl md:text-[2.25rem] text-zinc-900 font-normal tracking-tight leading-tight">
+                  Check Availability
+                </h2>
               </div>
+
+              {/* Circular Close Button */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-400 hover:text-zinc-700 flex items-center justify-center transition-colors shrink-0 mt-0.5"
+                aria-label="Close"
+              >
+                <X size={16} strokeWidth={2.2} />
+              </button>
             </div>
 
-            <div className="flex items-center gap-4">
-              <span className="font-semibold text-gray-700 w-16">Children</span>
-              <div className="flex items-center gap-3">
-                <button 
-                  onClick={() => setChildren(Math.max(0, children - 1))}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
-                >
-                  <Minus size={14} />
-                </button>
-                <span className="w-4 text-center font-medium text-gray-900">{children}</span>
-                <button 
-                  onClick={() => setChildren(children + 1)}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-primary hover:text-primary transition-colors"
-                >
-                  <Plus size={14} />
-                </button>
+            {/* Form */}
+            <form onSubmit={handleRequestBooking} className="flex flex-col gap-4 sm:gap-4.5">
+              
+              {/* Your Name */}
+              <div className="space-y-1.5">
+                <label className="block text-xs sm:text-[13px] font-medium text-zinc-700">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full h-11 sm:h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-[#1d4334] focus:ring-2 focus:ring-[#1d4334]/15 transition-all"
+                />
               </div>
-            </div>
-          </div>
 
-        </div>
+              {/* Email & Phone Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="space-y-1.5">
+                  <label className="block text-xs sm:text-[13px] font-medium text-zinc-700">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full h-11 sm:h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-[#1d4334] focus:ring-2 focus:ring-[#1d4334]/15 transition-all"
+                  />
+                </div>
 
-        {/* Footer */}
-        <div className="p-6 pt-4 border-t border-gray-100 bg-white z-20 shrink-0">
-          <button 
-            onClick={handleRequestBooking}
-            className="w-full bg-[#0b382d] hover:bg-[#07241c] text-white px-8 py-4 rounded-lg font-medium tracking-wide transition-colors shadow-lg shadow-primary/20"
-          >
-            Request Booking
-          </button>
-        </div>
+                <div className="space-y-1.5">
+                  <label className="block text-xs sm:text-[13px] font-medium text-zinc-700">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+962 7 9114 9240"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full h-11 sm:h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-[#1d4334] focus:ring-2 focus:ring-[#1d4334]/15 transition-all"
+                  />
+                </div>
+              </div>
 
+              {/* Check In & Check Out Grid */}
+              <div className="grid grid-cols-2 gap-3.5">
+                <div className="space-y-1.5">
+                  <label className="block text-xs sm:text-[13px] font-medium text-zinc-700">
+                    Check In
+                  </label>
+                  <input
+                    type="date"
+                    required
+                    min={todayStr}
+                    value={checkInStr}
+                    onChange={(e) => setCheckInStr(e.target.value)}
+                    className="w-full h-11 sm:h-12 rounded-xl border border-zinc-200 bg-white px-3.5 text-sm text-zinc-700 focus:outline-none focus:border-[#1d4334] focus:ring-2 focus:ring-[#1d4334]/15 transition-all cursor-pointer"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="block text-xs sm:text-[13px] font-medium text-zinc-700">
+                    Check Out
+                  </label>
+                  <input
+                    type="date"
+                    required
+                    min={checkInStr || todayStr}
+                    value={checkOutStr}
+                    onChange={(e) => setCheckOutStr(e.target.value)}
+                    className="w-full h-11 sm:h-12 rounded-xl border border-zinc-200 bg-white px-3.5 text-sm text-zinc-700 focus:outline-none focus:border-[#1d4334] focus:ring-2 focus:ring-[#1d4334]/15 transition-all cursor-pointer"
+                  />
+                </div>
+              </div>
+
+              {/* Adults & Children Pill Counters */}
+              <div className="grid grid-cols-2 gap-3.5 pt-0.5">
+                {/* Adults Pill */}
+                <div className="h-11 sm:h-12 rounded-xl bg-[#FAF8F5] border border-zinc-200/85 px-3.5 sm:px-4 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-medium text-zinc-700">
+                    Adults
+                  </span>
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => setAdults(Math.max(1, adults - 1))}
+                      className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 hover:border-zinc-400 hover:text-zinc-800 transition-colors shadow-2xs active:scale-95"
+                    >
+                      <Minus size={12} strokeWidth={2.2} />
+                    </button>
+                    <span className="w-4 text-center text-xs sm:text-sm font-semibold text-zinc-800">
+                      {adults}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setAdults(adults + 1)}
+                      className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 hover:border-zinc-400 hover:text-zinc-800 transition-colors shadow-2xs active:scale-95"
+                    >
+                      <Plus size={12} strokeWidth={2.2} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Children Pill */}
+                <div className="h-11 sm:h-12 rounded-xl bg-[#FAF8F5] border border-zinc-200/85 px-3.5 sm:px-4 flex items-center justify-between">
+                  <span className="text-xs sm:text-sm font-medium text-zinc-700">
+                    Children
+                  </span>
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => setChildren(Math.max(0, children - 1))}
+                      className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 hover:border-zinc-400 hover:text-zinc-800 transition-colors shadow-2xs active:scale-95"
+                    >
+                      <Minus size={12} strokeWidth={2.2} />
+                    </button>
+                    <span className="w-4 text-center text-xs sm:text-sm font-semibold text-zinc-800">
+                      {children}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setChildren(children + 1)}
+                      className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 hover:border-zinc-400 hover:text-zinc-800 transition-colors shadow-2xs active:scale-95"
+                    >
+                      <Plus size={12} strokeWidth={2.2} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Button: Request Availability via WhatsApp */}
+              <button
+                type="submit"
+                className="w-full bg-[#1d4334] hover:bg-[#153427] text-white h-12 sm:h-13 rounded-xl font-medium text-sm sm:text-[15px] tracking-wide transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center mt-2 active:scale-[0.99]"
+              >
+                Request Availability via WhatsApp
+              </button>
+
+            </form>
           </motion.div>
         </motion.div>
       )}

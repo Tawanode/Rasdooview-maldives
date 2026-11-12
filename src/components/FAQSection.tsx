@@ -10,36 +10,36 @@ import {
 export default function FAQSection() {
   const faqs = [
     {
-      question: "Do the apartments have kitchens?",
-      answer: "Yes, every apartment features a fully equipped kitchenette including a refrigerator, microwave, stove, electric kettle, and all necessary kitchenware."
+      question: "Where is Wadi Rum Bella Rose Luxury Camp located?",
+      answer: "Our camp is located on Wadi Rum Road in the peaceful Disah district of the Wadi Rum Protected Area, Jordan. Our location offers an intimate desert escape away from large tour-bus crowds."
     },
     {
-      question: "Is the property directly on the beach?",
-      answer: "Yes! Tropical Beach House Praslin is located directly on Amitié Beach, offering immediate beach access and stunning ocean views."
+      question: "How many units are at the camp?",
+      answer: "Wadi Rum Bella Rose Luxury Camp is an intimate and exclusive desert escape featuring only 11 thoughtfully designed luxury units with breathtaking mountain views."
     },
     {
-      question: "Is Wi-Fi available?",
-      answer: "Yes, complimentary high-speed Wi-Fi is available in all apartments and throughout the property."
+      question: "Do the rooms feature air conditioning and private ensuite bathrooms?",
+      answer: "Yes, every unit features individual air conditioning (crucial for desert heat), soundproof walls for tranquility, and a private ensuite bathroom with a walk-in shower, bathrobes, bidet, and complimentary toiletries."
     },
     {
-      question: "Is parking free?",
-      answer: "Yes, we provide free private parking on-site for all our guests."
+      question: "What dining experiences and breakfasts are offered?",
+      answer: "We feature a family-friendly on-site restaurant serving Middle Eastern, African, and Catalan cuisines, traditional slow-cooked Bedouin Zarb dinners, outdoor BBQ facilities, room service, and Continental, Full English/Irish, or Buffet breakfast options."
     },
     {
-      question: "Do you provide airport transfers?",
-      answer: "We can assist in arranging airport transfers from Praslin Airport or the ferry terminal upon request."
+      question: "Can we book 4x4 Jeep tours and camel rides at the camp?",
+      answer: "Yes, classic 4x4 Jeep desert tours, camel rides across the red dunes, and sandboarding are available and easily booked via our front desk and tour services."
     },
     {
-      question: "Can I book island tours?",
-      answer: "Yes, our team can help you book various excursions including snorkeling trips, boat tours, and visits to Vallée de Mai."
+      question: "How far is the camp from King Hussein International Airport?",
+      answer: "Our camp is located 61 km from King Hussein International Airport (Aqaba) with direct access along Wadi Rum Road."
     },
     {
-      question: "Is BBQ available?",
-      answer: "Yes, we have outdoor BBQ facilities in our tropical garden that are free for guests to use."
+      question: "Is Wi-Fi available at the camp?",
+      answer: "Yes, exceptional free Wi-Fi is provided for all guests across the camp and inside all private units."
     },
     {
-      question: "Is the property family friendly?",
-      answer: "Absolutely. We offer spacious two-bedroom family apartments and our beach is perfect for children."
+      question: "Is parking available at the camp?",
+      answer: "Yes, we provide free on-site private parking for all guests driving to the camp."
     }
   ];
 

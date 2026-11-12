@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
+import BookingBar from "./BookingBar";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -11,66 +11,76 @@ export default function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
-      >
-        <div className="absolute inset-0 bg-deep-navy/30 z-10" />
-        <img
-          src="/images/seychelles_hero_beach.png"
-          alt="Cinematic view of Tropical Beach House Praslin"
-          className="w-full h-full object-cover object-center"
-        />
-      </motion.div>
-
-      {/* Content */}
-      <motion.div
-        style={{ opacity }}
-        className="relative z-20 text-center text-white px-4 flex flex-col items-center max-w-4xl"
-      >
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-heading mb-8 leading-tight drop-shadow-lg text-white"
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-visible z-20"
+    >
+      {/* 1. Full-Bleed Background Image with Parallax & Slow Cinematic Zoom */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <motion.div
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.04 }}
+          transition={{ duration: 18, ease: "easeOut" }}
+          style={{ y }}
+          className="absolute inset-0 w-full h-[116%] -top-[8%] z-0 origin-center"
         >
-          Your Island Home <br />
-          <span className="font-accent italic font-light text-white">In Seychelles</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-warm-sand/90 max-w-2xl mb-12 drop-shadow-md font-light leading-relaxed"
-        >
-          Enjoy a peaceful self-catering stay at Tropical Beach House Praslin, perfectly located on Amitié Beach with spacious apartments, tropical gardens, and direct access to one of Praslin's most beautiful coastlines.
-        </motion.p>
-
-
-      </motion.div>
-
-      {/* Scroll Down Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <span className="text-white/60 text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-[1px] h-12 bg-white/30 relative overflow-hidden">
-          <motion.div
-            animate={{ y: ["-100%", "100%"] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-            className="w-full h-full bg-white absolute top-0"
+          <img
+            src="/images/wadirum_hero.jpg"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/images/wadirum_camp_exterior.jpg";
+            }}
+            alt="Wadi Rum Bella Rose Luxury Camp with Dome Tents and Sandstone Mountains"
+            className="w-full h-full object-cover object-[center_60%] md:object-[center_56%]"
           />
-        </div>
+        </motion.div>
+
+        {/* 15% overall black overlay for crisp white text legibility without heavy drop shadows */}
+        <div className="absolute inset-0 bg-black/15 z-10" />
+
+        {/* Subtle multi-directional gradients for cinematic atmosphere */}
+        <div className="absolute inset-x-0 top-0 h-36 md:h-44 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/35 z-10" />
+      </div>
+
+      {/* Top Spacer for Fixed Navigation */}
+      <div className="h-24 sm:h-28 shrink-0 relative z-20" />
+
+      {/* Center Hero Content (Absolute Vertical & Horizontal Center) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20 px-4 md:px-8">
+        <motion.div
+          style={{ opacity }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.15 }}
+          className="pointer-events-auto text-center text-white flex flex-col items-center max-w-4xl mx-auto -translate-y-8 sm:-translate-y-10 md:-translate-y-12"
+        >
+          {/* Eyebrow / Kicker */}
+          <span className="font-[family-name:var(--font-montserrat)] text-xs sm:text-sm uppercase tracking-[0.34em] text-white/95 font-semibold mb-3 sm:mb-4 block drop-shadow-sm">
+            WELCOME TO WADI RUM BELLA ROSE
+          </span>
+
+          {/* Main Headline (The Premium Stack: El Messiri, ALL CAPS, Upright, Tight Leading) */}
+          <h1 className="font-[family-name:var(--font-el-messiri)] text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.75rem] font-medium tracking-[0.06em] uppercase text-white leading-[1.08] sm:leading-[1.05] drop-shadow-sm">
+            <span className="block">A DESERT ESCAPE</span>
+            <span className="block mt-1 sm:mt-1.5 text-white/95">
+              BEYOND THE ORDINARY
+            </span>
+          </h1>
+        </motion.div>
+      </div>
+
+      {/* Bottom Floating Booking Bar (Fold level) */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.85, delay: 0.5 }}
+        className="relative z-30 w-full max-w-6xl mx-auto px-4 md:px-8 translate-y-[82%] shrink-0 pointer-events-auto mt-auto"
+      >
+        <BookingBar embedded />
       </motion.div>
     </section>
   );

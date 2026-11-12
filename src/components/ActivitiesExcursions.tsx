@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 
 export default function ActivitiesExcursions() {
   const activities = [
-    { title: "Snorkeling", desc: "Swim alongside graceful sea turtles and tropical fish in their natural coral reef habitat." },
-    { title: "Island Hopping", desc: "Safe and thrilling excursions to explore nearby islands and their unique beauty." },
-    { title: "Deep Sea Fishing", desc: "Experience the thrill of catching big game fish in the deep waters around Seychelles." },
-    { title: "Hiking & Beach Walks", desc: "Discover lush trails and pristine, isolated stretches of white sand surrounded by ocean." },
-    { title: "Creole Cooking", desc: "Learn to prepare authentic Seychellois cuisine with fresh local ingredients." },
-    { title: "Boat Tours", desc: "Enjoy a relaxing cruise to experience spectacular sunsets and coastal views." },
+    { title: "4x4 Jeep Tours", desc: "Explore towering sandstone arches, dramatic canyons, and historic landmarks, bookable via our tour desk." },
+    { title: "Camel Rides", desc: "Experience the timeless rhythm of the desert on a peaceful guided camel trek across golden dunes." },
+    { title: "Sandboarding", desc: "Experience the thrill of gliding down the spectacular red sand dunes right in our desert backyard." },
+    { title: "Campfire & Bedouin Music", desc: "Gather around the outdoor fireplace for evening entertainment, traditional Bedouin music, and warm mint tea." },
+    { title: "Spectacular Stargazing", desc: "Marvel at crystal-clear celestial vistas and the Milky Way stretching across dark, unpolluted desert skies." },
+    { title: "Fitness Center & Solarium", desc: "Keep up with your wellness routine in our fitness center and relax on the panoramic desert sun terrace." },
   ];
 
   const slideshowImages = [
-    { src: "/images/seychelles_snorkeling.png", title: "Marine Life Encounters", subtitle: "Experience the vibrant underwater world." },
-    { src: "/images/seychelles_anse_lazio.png", title: "Spectacular Beaches", subtitle: "Explore some of the world's best coastlines." },
-    { src: "/images/seychelles_vallee_de_mai.png", title: "Lush Nature", subtitle: "Discover exotic jungle reserves." },
-    { src: "/images/seychelles_beach_couple.png", title: "Romantic Escapes", subtitle: "Enjoy perfect moments by the sea." }
+    { src: "/images/wadirum_jeep_tour.jpg", title: "4x4 Jeep Safaris", subtitle: "Traverse towering red dunes and desert canyons." },
+    { src: "/images/wadirum_camel_ride.jpg", title: "Traditional Camel Treks", subtitle: "Experience the timeless rhythm of the desert." },
+    { src: "/images/wadirum_stargazing.jpg", title: "Milky Way Stargazing", subtitle: "Marvel at thousands of stars from the outdoor lounge." },
+    { src: "/images/wadirum_sunset.jpg", title: "Desert Sunsets", subtitle: "Witness the magical golden hour over sandstone peaks." }
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,10 +33,10 @@ export default function ActivitiesExcursions() {
     <section id="experiences" className="py-24 md:py-32 px-4 md:px-8 bg-soft-beige/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Island Adventures</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Explore the Best of Praslin</h2>
+          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Desert Adventures</p>
+          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Unforgettable Desert Experiences</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Praslin is famous for its incredible nature and beaches. We can assist you in arranging authentic excursions with trusted local guides so you can experience the best of Seychelles.
+            From thrilling 4x4 Jeep tours across red dunes to quiet evenings of Bedouin music by the open fire, our tour desk will curate your ideal desert itinerary.
           </p>
         </div>
 
@@ -61,10 +61,14 @@ export default function ActivitiesExcursions() {
                     alt={img.title} 
                     className="w-full h-full object-cover transition-transform duration-[5000ms] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-8 left-8 right-8 text-white">
-                    <h3 className="font-heading text-3xl mb-2 drop-shadow-md">{img.title}</h3>
-                    <p className="text-white/90 text-sm drop-shadow-sm">{img.subtitle}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10" />
+                  <div className="absolute bottom-8 left-8 right-8 z-20">
+                    <h3 className="font-heading text-2xl sm:text-3xl !text-[#FAF6EE] mb-2 drop-shadow-md font-medium tracking-tight">
+                      {img.title}
+                    </h3>
+                    <p className="text-[#FAF6EE]/90 text-sm drop-shadow-sm font-normal">
+                      {img.subtitle}
+                    </p>
                   </div>
                 </div>
               ))}

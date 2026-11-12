@@ -6,10 +6,10 @@ import { X, ZoomIn } from "lucide-react";
 
 export default function ImageGallery() {
   const images = [
-    { src: "/images/seychelles_hero_beach.png", alt: "Beachfront Exterior", span: "md:col-span-2 md:row-span-2" },
-    { src: "/images/seychelles_apartment.png", alt: "Cozy Bedrooms", span: "col-span-1 row-span-1" },
-    { src: "/images/seychelles_bbq_garden.png", alt: "BBQ Area", span: "col-span-1 row-span-1" },
-    { src: "/images/seychelles_snorkeling.png", alt: "Snorkeling", span: "md:col-span-2 row-span-1" },
+    { src: "/images/wadirum_camp_exterior.jpg", alt: "Exterior of Dome Tents and Bedouin Camp Against Mountain Backdrop", span: "md:col-span-2 md:row-span-2" },
+    { src: "/images/wadirum_room_interior.jpg", alt: "Luxury Glamping Suite with AC and Panoramic Mountain Views", span: "col-span-1 row-span-1" },
+    { src: "/images/wadirum_bathroom.jpg", alt: "Private Ensuite Bathroom with Walk-in Shower & Premium Amenities", span: "col-span-1 row-span-1" },
+    { src: "/images/wadirum_campfire.jpg", alt: "Communal Evening Entertainment Area & Outdoor Fireplace", span: "md:col-span-2 row-span-1" },
   ];
 
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
@@ -18,8 +18,8 @@ export default function ImageGallery() {
     <section id="gallery" className="py-24 md:py-32 px-4 md:px-8 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Gallery</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy">Moments in Seychelles</h2>
+          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Camp Gallery</p>
+          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy">Moments in the Jordanian Desert</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]">

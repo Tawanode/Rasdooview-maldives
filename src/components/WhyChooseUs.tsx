@@ -1,42 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Umbrella, Coffee, Wifi, CupSoda, Shirt, BellRing, Sun, Waves } from "lucide-react";
 
 export default function WhyChooseUs() {
   const features = [
-    { icon: <Umbrella size={32} />, title: "Beachfront Location" },
-    { icon: <Coffee size={32} />, title: "Self-Catering Apartments" },
-    { icon: <Wifi size={32} />, title: "Spacious Family Accommodation" },
-    { icon: <CupSoda size={32} />, title: "Fully Equipped Kitchens" },
-    { icon: <Sun size={32} />, title: "Tropical Gardens" },
-    { icon: <Waves size={32} />, title: "Direct Beach Access" },
-    { icon: <BellRing size={32} />, title: "Ocean Views" },
-    { icon: <Shirt size={32} />, title: "Peaceful Environment" },
+    { num: "01", title: "Climate Control" },
+    { num: "02", Private: false, title: "Private Terraces" },
+    { num: "03", title: "Authentic Dining" },
+    { num: "04", title: "Desert Excursions" },
+    { num: "05", title: "Premium Wi-Fi" },
+    { num: "06", title: "24/7 Concierge" },
   ];
 
   return (
-    <section className="py-24 px-4 md:px-8 bg-soft-beige/30">
-      <div className="container mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Our Amenities</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy">Why Guests Choose Us</h2>
+    <section className="py-14 sm:py-16 md:py-20 px-4 md:px-8 bg-[#F5EFEB]">
+      <div className="container mx-auto max-w-5xl">
+        {/* Header Stack */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14">
+          <p className="font-[family-name:var(--font-montserrat)] text-xs sm:text-[13px] font-semibold tracking-[0.32em] uppercase text-[#A8582C] mb-3">
+            5-STAR DESERT LIVING
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl text-[#221C18] font-normal tracking-tight">
+            Luxuries of the Desert
+          </h2>
+          <div className="w-12 h-[1px] bg-[#A8582C]/35 mx-auto mt-4" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        {/* 3-Column x 2-Row Ultra-Concise Editorial Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 sm:gap-x-12 lg:gap-x-16 gap-y-8 sm:gap-y-10 md:gap-y-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-1"
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="group flex flex-col items-center text-center cursor-default"
             >
-              <div className="text-primary group-hover:text-deep-navy transition-colors duration-300">
-                {feature.icon}
-              </div>
-              <h3 className="font-medium text-deep-navy text-sm md:text-base leading-snug">
+              {/* Editorial Numeral (Rich Terracotta, High-End Magazine Style) */}
+              <span className="font-[family-name:var(--font-playfair)] text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#A8582C] mb-2.5 transition-transform duration-200 group-hover:scale-105">
+                {feature.num}
+              </span>
+
+              {/* Clean Geometric Sans in Medium Weight (Outfit) */}
+              <h3 className="font-[family-name:var(--font-outfit)] text-base sm:text-lg md:text-[1.125rem] font-medium text-[#221C18] tracking-tight leading-snug transition-colors duration-200 group-hover:text-[#A8582C]">
                 {feature.title}
               </h3>
             </motion.div>

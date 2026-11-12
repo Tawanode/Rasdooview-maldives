@@ -3,12 +3,21 @@
 import { motion } from "framer-motion";
 
 export default function DiningExperience() {
-  const selfCatering = [
-    "Fully Equipped Kitchenette", "Outdoor BBQ Area", "Nearby Creole Restaurants", "Fresh Local Seafood", "Dining Area"
+  const diningHighlights = [
+    "Traditional Bedouin Zarb Dinners",
+    "Family-Friendly On-Site Restaurant",
+    "Middle Eastern, African & Catalan Cuisines",
+    "Continental, English/Irish & Buffet Breakfast",
+    "Outdoor BBQ Facilities"
   ];
   
-  const kitchenAmenities = [
-    "Refrigerator", "Microwave", "Stove", "Electric Kettle", "Kitchenware", "Coffee & Tea Facilities"
+  const diningServices = [
+    "In-Room Grocery Delivery",
+    "Room Service",
+    "Communal Bedouin Tea by the Campfire",
+    "Fresh Locally Prepared Ingredients",
+    "Outdoor Dining Under the Stars",
+    "Coffee & Tea Facilities"
   ];
 
   return (
@@ -25,8 +34,8 @@ export default function DiningExperience() {
           >
             <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square rounded-full md:rounded-2xl lg:rounded-full overflow-hidden shadow-2xl">
               <img 
-                src="/images/seychelles_bbq_garden.png" 
-                alt="Self-catering and BBQ at Tropical Beach House Praslin" 
+                src="/images/wadirum_zarb_dinner.jpg" 
+                alt="Traditional Bedouin Zarb dinner at Wadi Rum Bella Rose Luxury Camp" 
                 className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />
             </div>
@@ -42,20 +51,20 @@ export default function DiningExperience() {
             <div>
               <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Dining Experience</p>
               <h2 className="font-heading text-4xl md:text-5xl text-deep-navy leading-tight mb-6">
-                Cook at Your <br />
-                <span className="font-accent italic text-primary">Own Pace</span>
+                Authentic Bedouin Zarb & <br />
+                <span className="font-accent italic text-primary">Desert Dining</span>
               </h2>
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              Every apartment includes a fully equipped kitchenette, giving you complete flexibility during your stay. Nearby cafés and local Creole restaurants offer delicious island cuisine, while the property's BBQ facilities are perfect for outdoor dining with family and friends.
+              Experience the true culinary soul of the desert at our family-friendly on-site restaurant. Savor our signature Bedouin Zarb dinner—tender meats and seasoned vegetables slow-cooked subterranean in an underground sand oven beneath glowing desert embers. Enjoy diverse dishes spanning Middle Eastern, African, and Catalan cuisines, alongside comprehensive breakfast options.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-border">
               <div>
                 <h4 className="font-heading text-xl text-deep-navy mb-4">Dining Highlights</h4>
                 <ul className="space-y-2">
-                  {selfCatering.map((item, i) => (
+                  {diningHighlights.map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="w-1 h-1 rounded-full bg-primary" /> {item}
                     </li>
@@ -63,9 +72,9 @@ export default function DiningExperience() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-heading text-xl text-deep-navy mb-4">Kitchen Includes</h4>
+                <h4 className="font-heading text-xl text-deep-navy mb-4">Services & Comforts</h4>
                 <ul className="space-y-2">
-                  {kitchenAmenities.map((item, i) => (
+                  {diningServices.map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="w-1 h-1 rounded-full bg-primary" /> {item}
                     </li>

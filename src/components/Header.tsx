@@ -24,10 +24,9 @@ export default function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Accommodations", href: "/accommodation" },
-    { name: "Dining", href: "/#dining" },
     { name: "Experiences", href: "/#experiences" },
     { name: "Gallery", href: "/#gallery" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -43,32 +42,32 @@ export default function Header() {
       >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex flex-col z-50 relative">
-          <span className={`font-heading text-xl md:text-2xl font-bold tracking-tight transition-colors ${isDarkText ? "text-deep-navy" : "text-white"}`}>
-            Tropical Beach House
+        <Link href="/" className="flex flex-col items-start text-left z-50 relative group">
+          <span className={`font-[family-name:var(--font-el-messiri)] text-lg md:text-xl lg:text-[1.35rem] font-medium tracking-[0.04em] uppercase transition-colors ${isDarkText ? "text-deep-navy" : "text-white"}`}>
+            WADI RUM BELLA ROSE
           </span>
-          <span className={`text-[0.65rem] uppercase tracking-[0.2em] transition-colors ${isDarkText ? "text-primary" : "text-white/80"}`}>
-            Praslin
+          <span className={`font-[family-name:var(--font-montserrat)] text-[0.52rem] md:text-[0.58rem] uppercase tracking-[0.34em] font-medium transition-colors mt-0.5 ${isDarkText ? "text-deep-navy/85" : "text-white/90"}`}>
+            LUXURY CAMP &bull; JORDAN
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-sm uppercase tracking-wider font-medium transition-colors hover:text-primary ${
-                isDarkText ? "text-deep-navy/80" : "text-white/90"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        {/* Right Section: Desktop Nav Links + Book Now Button */}
+        <div className="flex items-center gap-6 lg:gap-8 z-50 relative">
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-xs xl:text-sm uppercase tracking-wider font-medium transition-colors hover:text-primary ${
+                  isDarkText ? "text-deep-navy/80" : "text-white/90"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-        {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4 z-50 relative">
           <Button
             className="hidden md:flex bg-[#0b382d] hover:bg-[#07241c] text-white rounded-md px-6 font-medium tracking-wide transition-colors"
             onClick={() => {

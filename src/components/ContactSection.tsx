@@ -29,10 +29,10 @@ export default function ContactSection() {
             className="flex-1 space-y-8"
           >
             <div>
-              <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Start Your Seychelles Escape</p>
-              <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">We're Here to Help</h2>
+              <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Start Your Desert Escape</p>
+              <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Plan Your Wadi Rum Stay</h2>
               <p className="text-muted-foreground leading-relaxed max-w-md">
-                Whether you have a question about our self-catering apartments, need help with car rentals, or want to customize an island tour, our team is ready to assist you.
+                Whether you have questions about our 11 luxury units, authentic Bedouin Zarb dining, or wish to arrange 4x4 Jeep tours across the red dunes, our team is at your service.
               </p>
             </div>
 
@@ -42,8 +42,20 @@ export default function ContactSection() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="font-heading text-xl text-deep-navy mb-1">Address</h4>
-                  <p className="text-muted-foreground text-sm">Amitié Beach<br />Grand Anse, Praslin Island<br />Seychelles</p>
+                  <h4 className="font-heading text-xl text-deep-navy mb-1">Property Address</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Wadi Rum Bella Rose Luxury Camp<br />
+                    Wadi Rum Road, Disah Area<br />
+                    Wadi Rum Protected Area, Jordan
+                  </p>
+                  <a 
+                    href="https://maps.google.com/?q=Wadi+Rum+Road,+Disah+Area,+Wadi+Rum+Protected+Area,+Jordan" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-block text-xs font-semibold text-primary hover:underline mt-2 tracking-wide"
+                  >
+                    GET DIRECTIONS &rarr;
+                  </a>
                 </div>
               </div>
 
@@ -52,8 +64,14 @@ export default function ContactSection() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="font-heading text-xl text-deep-navy mb-1">WhatsApp & Phone</h4>
-                  <a href="https://wa.me/2482512515" className="text-muted-foreground hover:text-primary transition-colors text-sm">+248 2 512 515</a>
+                  <h4 className="font-heading text-xl text-deep-navy mb-1">Contact & Inquiries</h4>
+                  <a href="tel:+962791149240" className="text-muted-foreground hover:text-primary transition-colors text-sm">+962 7 9114 9240</a>
+                  <button 
+                    onClick={() => window.dispatchEvent(new CustomEvent("open-booking-modal"))}
+                    className="text-xs font-semibold text-primary hover:underline mt-2 tracking-wide block"
+                  >
+                    CHECK AVAILABILITY &rarr;
+                  </button>
                 </div>
               </div>
 
@@ -62,8 +80,8 @@ export default function ContactSection() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="font-heading text-xl text-deep-navy mb-1">Email</h4>
-                  <a href="mailto:info@tropicalbeachhousepraslin.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">info@tropicalbeachhousepraslin.com</a>
+                  <h4 className="font-heading text-xl text-deep-navy mb-1">Guest Services</h4>
+                  <p className="text-muted-foreground text-sm">24-Hour Front Desk & Tour Booking Desk</p>
                 </div>
               </div>
             </div>

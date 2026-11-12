@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wifi, Wind, Tv, Coffee, Utensils, BedDouble, Bath, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Wifi, Wind, Coffee, Utensils, Mountain, Bath, Flame, ShieldCheck, Compass } from "lucide-react";
 
 export default function AccommodationPage() {
   return (
@@ -16,12 +16,12 @@ export default function AccommodationPage() {
           transition={{ duration: 0.6 }}
           className="mb-12 max-w-3xl"
         >
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Stay In Comfort</p>
+          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">5-Star Desert Glamping</p>
           <h1 className="font-heading text-5xl md:text-6xl text-deep-navy mb-6">
-            Our <span className="text-muted-foreground/60">Rooms</span>
+            Our Luxury <span className="text-muted-foreground/60">Tents & Units</span>
           </h1>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            A calm, light-filled stay with flexible bed arrangements, private bathroom, quality linens, and the everyday comforts that matter most on the island. It works beautifully for couples, friends, and families who want a practical room with warm guesthouse service.
+            Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Featuring family and interconnected options, every unit provides a quiet, private space with stunning mountain views.
           </p>
         </motion.div>
 
@@ -34,19 +34,39 @@ export default function AccommodationPage() {
         >
           {/* Left Large Image */}
           <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden aspect-square md:aspect-auto">
-            <img src="/images/deluxe_room.png" alt="Room View" className="w-full h-full object-cover" />
+            <img 
+              src="/images/wadirum_room_interior.jpg" 
+              onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_camp_exterior.jpg"; }}
+              alt="Double Room with Mountain View at Wadi Rum Bella Rose Luxury Camp" 
+              className="w-full h-full object-cover" 
+            />
           </div>
           {/* Top Right Image */}
           <div className="rounded-3xl overflow-hidden aspect-[4/3]">
-            <img src="/images/deluxe_room.png" alt="Towel Swans" className="w-full h-full object-cover" />
+            <img 
+              src="/images/wadirum_bathroom.jpg" 
+              onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_sunset.jpg"; }}
+              alt="Private Ensuite Bathroom with Walk-in Shower" 
+              className="w-full h-full object-cover" 
+            />
           </div>
           {/* Bottom Right Two Images */}
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img src="/images/deluxe_room.png" alt="Room Detail" className="w-full h-full object-cover" />
+              <img 
+                src="/images/wadirum_room_deluxe.jpg" 
+                onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_mountains.jpg"; }}
+                alt="Superior Deluxe Twin Room" 
+                className="w-full h-full object-cover" 
+              />
             </div>
             <div className="rounded-3xl overflow-hidden aspect-square">
-              <img src="/images/deluxe_room.png" alt="Water Bottles" className="w-full h-full object-cover" />
+              <img 
+                src="/images/wadirum_campfire.jpg" 
+                onError={(e) => { (e.target as HTMLImageElement).src = "/images/wadirum_stargazing.jpg"; }}
+                alt="Outdoor Fireplace & Camp Grounds" 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
         </motion.div>
@@ -60,9 +80,9 @@ export default function AccommodationPage() {
         >
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
             <div>
-              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-3">Room Overview</p>
-              <h2 className="font-heading text-3xl md:text-4xl text-deep-navy mb-4">Flexible Double or Twin Room</h2>
-              <p className="text-muted-foreground">The room offers a calm, clean stay with thoughtful everyday comfort and easy access to the guesthouse spaces and island activities.</p>
+              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-3">Unit Highlights</p>
+              <h2 className="font-heading text-3xl md:text-4xl text-deep-navy mb-4">Intimate 11-Unit Desert Haven</h2>
+              <p className="text-muted-foreground">Each unit offers an intimate and exclusive alternative to tour-bus camps, equipped with individual air conditioning, soundproof walls, and private ensuite bathrooms.</p>
             </div>
             <Button
               className="bg-[#0b382d] hover:bg-[#07241c] text-white rounded-md px-8 py-6 text-sm font-medium tracking-wide transition-colors shrink-0"
@@ -77,10 +97,10 @@ export default function AccommodationPage() {
           {/* Amenities Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Bath, title: "PRIVATE BATHROOM", desc: "Comfortable space with shower and daily essentials." },
-              { icon: Users, title: "FAMILY FRIENDLY", desc: "Great for couples, friends, and family stays." },
-              { icon: Utensils, title: "RESTAURANT & BREAKFAST", desc: "On-site dining, breakfast, and easy guesthouse meals." },
-              { icon: Coffee, title: "IN-ROOM COMFORTS", desc: "Tea and coffee setup in every room." }
+              { icon: Bath, title: "PRIVATE BATHROOM", desc: "Ensuite walk-in shower, bathrobes, bidet, and toiletries." },
+              { icon: Wind, title: "AIR CONDITIONING", desc: "Individual AC essential for desert climate and soundproof walls." },
+              { icon: Mountain, title: "MOUNTAIN VIEW TERRACE", desc: "Private terrace or balcony with landmark mountain panoramas." },
+              { icon: Wifi, title: "EXCEPTIONAL FREE WI-FI", desc: "Reliable high-speed connection throughout every unit." }
             ].map((feature, i) => (
               <div key={i} className="bg-warm-sand/50 p-6 rounded-2xl">
                 <feature.icon className="text-primary mb-4" size={24} />
@@ -94,10 +114,10 @@ export default function AccommodationPage() {
         {/* Detailed Information Section */}
         <div className="mt-32">
           <div className="mb-12 max-w-3xl">
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Comfortable Setup</p>
-            <h2 className="font-heading text-4xl text-deep-navy mb-6">A well-set room for easy island stays</h2>
+            <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Thoughtfully Designed</p>
+            <h2 className="font-heading text-4xl text-deep-navy mb-6">Four Distinct Desert Accommodations</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Beyond the room itself, the stay is shaped by practical service, shared guest spaces, and the kind of local support that makes island travel feel easy and unhurried.
+              Designed for travelers who seek both adventure and comfort, our accommodations provide modern luxuries right in the middle of the Wadi Rum Protected Area.
             </p>
           </div>
 
@@ -109,13 +129,16 @@ export default function AccommodationPage() {
               viewport={{ once: true }}
               className="lg:w-1/3 bg-white rounded-3xl p-8 shadow-sm border border-border/50 sticky top-32 w-full"
             >
-              <h3 className="font-heading text-2xl text-deep-navy mb-8">Room essentials</h3>
+              <h3 className="font-heading text-2xl text-deep-navy mb-8">Unit essentials</h3>
               <ul className="space-y-6">
                 {[
-                  "Private bathroom with shower and toiletries",
-                  "Air conditioning and fan",
-                  "Tea and coffee setup, mini bar, and refrigerator",
-                  "TV, telephone, wardrobe, and towels"
+                  "Individual air conditioning (crucial for desert heat)",
+                  "Private ensuite bathroom with walk-in shower & bathrobes",
+                  "Private terrace or balcony with mountain views",
+                  "Soundproof walls for ultimate peace & quiet",
+                  "Exceptional free Wi-Fi",
+                  "Coffee machine and dedicated desk",
+                  "Fireplace (available in select deluxe and luxury units)"
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 items-start text-muted-foreground text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
@@ -132,15 +155,31 @@ export default function AccommodationPage() {
               viewport={{ once: true }}
               className="lg:w-2/3 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50 w-full"
             >
-              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Why Guests Choose Us</p>
-              <h3 className="font-heading text-3xl text-deep-navy mb-10">Why guests choose this room</h3>
+              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Property Categories</p>
+              <h3 className="font-heading text-3xl text-deep-navy mb-10">Our Room Categories</h3>
 
               <div className="space-y-10 mb-12">
                 {[
-                  { icon: BedDouble, title: "Easy arrival flow", desc: "24-hour front desk support, wake-up service, and local guidance helps ease arrivals and departures on the island." },
-                  { icon: Utensils, title: "Breakfast and guesthouse dining", desc: "Enjoy daily restaurant dining. Half board or full board options help cover both early mornings and relaxed evenings." },
-                  { icon: Wind, title: "Made for island exploring", desc: "Bicycle rental, snorkeling strings, sunset guidelines, windsurfing, and local tours are all within reach when you want more than just a room." },
-                  { icon: ShieldCheck, title: "Safe and easy for longer stays", desc: "Safe, ironing facilities, laundry options, ground-floor access, and family-friendly features make the stay more practical day-to-day." }
+                  { 
+                    icon: Mountain, 
+                    title: "Double Room with Mountain View", 
+                    desc: "An intimate and peaceful desert escape featuring private ensuite walk-in shower, individual air conditioning, soundproof walls, coffee machine, and a private terrace overlooking the red mountains." 
+                  },
+                  { 
+                    icon: Wind, 
+                    title: "Superior Deluxe Double or Twin Room", 
+                    desc: "Spacious luxury unit with flexible double or twin bedding, individual air conditioning, soundproofing, plush bathrobes, work desk, coffee station, and expansive desert rock vistas." 
+                  },
+                  { 
+                    icon: ShieldCheck, 
+                    title: "Triple Room with Mountain View", 
+                    desc: "Ideal for friends or small families seeking desert comfort. Offers comfortable triple bedding, soundproof tranquility, individual air conditioning, private ensuite bath, and sweeping mountain panoramas." 
+                  },
+                  { 
+                    icon: Flame, 
+                    title: "Luxury Triple Room", 
+                    desc: "Our most premium glamping category featuring a cozy fireplace in select units, private ensuite bathroom, individual air conditioning, and a private terrace overlooking the magnificent Wadi Rum cliffs." 
+                  }
                 ].map((reason, i) => (
                   <div key={i} className="flex gap-6 items-start">
                     <div className="bg-warm-sand p-3 rounded-full shrink-0">
@@ -156,23 +195,23 @@ export default function AccommodationPage() {
 
               {/* Key Features Box */}
               <div className="bg-warm-sand/40 rounded-2xl p-8 border border-border/50">
-                <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Key Features</p>
+                <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Key Specifications</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
                   <div className="flex justify-between items-center border-b border-border/50 pb-3">
-                    <span className="text-sm text-muted-foreground">Room Style</span>
-                    <span className="text-sm font-bold text-deep-navy">Double or Twin</span>
+                    <span className="text-sm text-muted-foreground">Property Size</span>
+                    <span className="text-sm font-bold text-deep-navy">Only 11 Luxury Units</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border/50 pb-3">
                     <span className="text-sm text-muted-foreground">Bathroom</span>
-                    <span className="text-sm font-bold text-deep-navy">Bathroom with shower</span>
+                    <span className="text-sm font-bold text-deep-navy">Ensuite Walk-in Shower</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border/50 pb-3">
-                    <span className="text-sm text-muted-foreground">Internet</span>
-                    <span className="text-sm font-bold text-deep-navy">Free Wi-Fi</span>
+                    <span className="text-sm text-muted-foreground">Climate Control</span>
+                    <span className="text-sm font-bold text-deep-navy">Individual Air Conditioning</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-border/50 pb-3">
-                    <span className="text-sm text-muted-foreground">Service</span>
-                    <span className="text-sm font-bold text-deep-navy">Daily Housekeeping</span>
+                    <span className="text-sm text-muted-foreground">Acoustic Comfort</span>
+                    <span className="text-sm font-bold text-deep-navy">Soundproof Walls</span>
                   </div>
                 </div>
               </div>
@@ -188,10 +227,10 @@ export default function AccommodationPage() {
           className="mt-32 bg-[#121415] rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl"
         >
           <div className="relative z-10 max-w-2xl text-center md:text-left">
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Ready To Stay</p>
-            <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">Tell us your dates and preferred bed setup</h2>
+            <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Book Your Desert Escape</p>
+            <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">Experience authentic Bedouin hospitality and modern luxury</h2>
             <p className="text-white/70">
-              We can prepare the room as a large double or as separate twin beds, and help with breakfast preferences and the right stay setup for your trip.
+              With just 11 exclusive units in the Disah district, our camp fills quickly. Tell us your travel dates and preferred unit configuration.
             </p>
           </div>
 

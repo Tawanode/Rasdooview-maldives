@@ -11,7 +11,7 @@ export default function BookingWidget() {
     checkIn: "",
     checkOut: "",
     guests: "2",
-    room: "Deluxe Room",
+    room: "Double Room with Mountain View",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -22,9 +22,12 @@ export default function BookingWidget() {
     e.preventDefault();
     
     // Construct WhatsApp message
-    const text = `Hello Tropical Beach House Praslin! I would like to request a booking.%0A%0A*Check-in:* ${formData.checkIn}%0A*Check-out:* ${formData.checkOut}%0A*Guests:* ${formData.guests}%0A*Room:* ${formData.room}%0A%0APlease let me know the availability and rates.`;
+    const text = `Hello Wadi Rum Bella Rose Luxury Camp! I would like to request a booking.%0A%0A*Check-in:* ${formData.checkIn}%0A*Check-out:* ${formData.checkOut}%0A*Guests:* ${formData.guests}%0A*Unit:* ${formData.room}%0A%0APlease let me know the availability and rates.`;
     
-    const whatsappUrl = `https://wa.me/2482512515?text=${text}`;
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "962791149240";
+    const whatsappUrl = whatsappNumber 
+      ? `https://wa.me/${whatsappNumber}?text=${text}`
+      : `https://wa.me/?text=${text}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -110,9 +113,10 @@ export default function BookingWidget() {
               onChange={handleChange}
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <option value="Deluxe Room">Deluxe Room</option>
-              <option value="Deluxe Suite">Deluxe Suite</option>
-              <option value="Family Suite">Family Suite</option>
+              <option value="Double Room with Mountain View">Double Room with Mountain View</option>
+              <option value="Superior Deluxe Double or Twin Room">Superior Deluxe Double or Twin Room</option>
+              <option value="Triple Room with Mountain View">Triple Room with Mountain View</option>
+              <option value="Luxury Triple Room">Luxury Triple Room</option>
               <option value="Not Sure Yet">Not Sure Yet</option>
             </select>
           </div>

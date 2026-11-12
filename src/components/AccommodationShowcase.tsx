@@ -7,22 +7,32 @@ import { ArrowRight, Wifi, Wind, Tv, Coffee } from "lucide-react";
 export default function AccommodationShowcase() {
   const rooms = [
     {
-      title: "Ground Floor Beachfront Apartments",
-      description: "Step right out onto Amitié Beach from your private terrace. These apartments offer direct beach access, comfortable bedding, and a fully equipped kitchenette.",
-      image: "/images/seychelles_apartment.png",
-      amenities: ["Air Conditioning", "Free WiFi", "Kitchenette", "Beach Access"],
+      title: "Double Room with Mountain View",
+      description: "Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Every unit provides a quiet, private space with individual air conditioning, private ensuite bathroom with walk-in shower, soundproof walls, and stunning mountain views from your private terrace.",
+      image: "/images/wadirum_room_interior.jpg",
+      fallbackImage: "/images/wadirum_camp_exterior.jpg",
+      amenities: ["Individual Air Conditioning", "Private Walk-in Shower", "Private Mountain Terrace", "Exceptional Free Wi-Fi"],
     },
     {
-      title: "Two-Bedroom Family Apartments",
-      description: "Designed for families, this expansive apartment provides multiple beds, extra space, a large living area, and a private balcony with ocean views.",
-      image: "/images/seychelles_apartment.png",
-      amenities: ["Spacious Living Area", "Private Balcony", "Kitchenette", "Ocean Views"],
+      title: "Superior Deluxe Double or Twin Room",
+      description: "A refined desert haven featuring flexible double or twin setups, soundproof walls, premium bathrobes, coffee machine, desk, and a private terrace offering dramatic views of Wadi Rum's majestic rock formations.",
+      image: "/images/wadirum_room_deluxe.jpg",
+      fallbackImage: "/images/wadirum_mountains.jpg",
+      amenities: ["Individual Air Conditioning", "Soundproof Walls", "Coffee Machine & Desk", "Ensuite Bath & Bathrobes"],
     },
     {
-      title: "Garden View Apartments",
-      description: "Enjoy peaceful moments surrounded by lush tropical gardens. These apartments offer a serene escape with modern self-catering facilities.",
-      image: "/images/seychelles_apartment.png",
-      amenities: ["Tropical Gardens", "Private Terrace", "Kitchenette", "Dining Area"],
+      title: "Triple Room with Mountain View",
+      description: "Comfortably configured for three guests or families traveling together. Enjoy private ensuite amenities, individual air conditioning for complete climate comfort, soundproof tranquility, and expansive desert mountain vistas.",
+      image: "/images/wadirum_sand_dunes.jpg",
+      fallbackImage: "/images/wadirum_sunset.jpg",
+      amenities: ["Individual Air Conditioning", "Private Ensuite Bathroom", "Panoramic Mountain Views", "Exceptional Free Wi-Fi"],
+    },
+    {
+      title: "Luxury Triple Room",
+      description: "An exceptional desert glamping experience featuring select units with an authentic fireplace, individual air conditioning, soundproof walls, private ensuite bathroom, and a spacious terrace looking out onto the red desert sands.",
+      image: "/images/wadirum_campfire.jpg",
+      fallbackImage: "/images/wadirum_stargazing.jpg",
+      amenities: ["Fireplace in Select Units", "Individual Air Conditioning", "Walk-in Shower & Toiletries", "Private Terrace with Views"],
     }
   ];
 
@@ -30,17 +40,17 @@ export default function AccommodationShowcase() {
     <section id="accommodations" className="py-24 md:py-32 px-4 md:px-8 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Our Apartments</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Comfortable Apartments Designed for Island Living</h2>
+          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Our Accommodations</p>
+          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Exclusive 5-Star Desert Glamping</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Every apartment at Tropical Beach House Praslin is designed to be your serene sanctuary after a day of island adventures. Clean, spacious, and fully equipped for self-catering.
+            Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Featuring family and interconnected options, every unit provides a quiet, private space with stunning mountain views.
           </p>
         </div>
 
         <div className="space-y-24 md:space-y-32">
           {rooms.map((room, index) => (
             <div key={index} className={`flex flex-col gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -48,16 +58,19 @@ export default function AccommodationShowcase() {
                 className="flex-1 w-full"
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group">
-                  <img 
-                    src={room.image} 
-                    alt={room.title} 
+                  <img
+                    src={room.image}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = room.fallbackImage;
+                    }}
+                    alt={room.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-deep-navy/5 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -68,7 +81,7 @@ export default function AccommodationShowcase() {
                 <p className="text-muted-foreground leading-relaxed">
                   {room.description}
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-4 py-6 border-y border-border">
                   {room.amenities.map((amenity, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-deep-navy font-medium">
@@ -78,15 +91,14 @@ export default function AccommodationShowcase() {
                   ))}
                 </div>
 
-                <Button 
-                  variant="link" 
+                <Button
+                  variant="link"
                   className="text-primary hover:text-deep-navy p-0 h-auto font-medium tracking-wide group"
                   onClick={() => {
-                    const widget = document.getElementById("booking-widget");
-                    widget?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    window.dispatchEvent(new CustomEvent("open-booking-modal"));
                   }}
                 >
-                  Request This Room
+                  Request This Unit
                   <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </motion.div>
