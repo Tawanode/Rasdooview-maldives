@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function WelcomeSection() {
   return (
-    <section className="py-24 md:py-32 px-4 md:px-8 bg-warm-sand">
+    <section className="pt-36 sm:pt-40 pb-24 md:py-32 px-4 md:px-8 bg-warm-sand">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Text Content */}
@@ -28,10 +28,10 @@ export default function WelcomeSection() {
               <p>
                 Experience the magic of the Jordanian desert at Wadi Rum Bella Rose Luxury Camp. Tucked away in the peaceful Disah area, our camp offers an intimate and exclusive alternative to massive tour-bus camps, featuring just 11 thoughtfully designed units.
               </p>
-              <p>
+              <p className="hidden md:block">
                 Designed for travelers who seek both adventure and comfort, our accommodations provide modern luxuries like air conditioning, soundproof walls, and private ensuite bathrooms right in the middle of the desert.
               </p>
-              <p>
+              <p className="hidden md:block">
                 Whether you are stargazing by the outdoor fireplace, enjoying a traditional Bedouin Zarb dinner, or exploring the red sand dunes on a 4x4 Jeep tour, we offer a peaceful and unforgettable Bedouin experience with world-class hospitality.
               </p>
             </div>
