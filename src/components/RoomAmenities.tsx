@@ -55,7 +55,10 @@ export default function RoomAmenities() {
               <h3 className="font-heading text-xl text-primary border-b border-border pb-2">{category.title}</h3>
               <ul className="space-y-4">
                 {category.items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-deep-navy">
+                  <li 
+                    key={i} 
+                    className={`items-center gap-4 text-deep-navy ${i === 3 ? "hidden md:flex" : "flex"}`}
+                  >
                     <div className="bg-white p-2 rounded-lg shadow-sm text-primary">
                       {item.icon}
                     </div>

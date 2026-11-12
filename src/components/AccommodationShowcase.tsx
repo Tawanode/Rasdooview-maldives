@@ -11,28 +11,28 @@ export default function AccommodationShowcase() {
       description: "Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Every unit provides a quiet, private space with individual air conditioning, private ensuite bathroom with walk-in shower, soundproof walls, and stunning mountain views from your private terrace.",
       image: "/images/wadirum_room_interior.jpg",
       fallbackImage: "/images/wadirum_camp_exterior.jpg",
-      amenities: ["Individual Air Conditioning", "Private Walk-in Shower", "Private Mountain Terrace", "Exceptional Free Wi-Fi"],
+
     },
     {
       title: "Superior Deluxe Double or Twin Room",
       description: "A refined desert haven featuring flexible double or twin setups, soundproof walls, premium bathrobes, coffee machine, desk, and a private terrace offering dramatic views of Wadi Rum's majestic rock formations.",
       image: "/images/wadirum_room_deluxe.jpg",
       fallbackImage: "/images/wadirum_mountains.jpg",
-      amenities: ["Individual Air Conditioning", "Soundproof Walls", "Coffee Machine & Desk", "Ensuite Bath & Bathrobes"],
+
     },
     {
       title: "Triple Room with Mountain View",
       description: "Comfortably configured for three guests or families traveling together. Enjoy private ensuite amenities, individual air conditioning for complete climate comfort, soundproof tranquility, and expansive desert mountain vistas.",
       image: "/images/wadirum_sand_dunes.jpg",
       fallbackImage: "/images/wadirum_sunset.jpg",
-      amenities: ["Individual Air Conditioning", "Private Ensuite Bathroom", "Panoramic Mountain Views", "Exceptional Free Wi-Fi"],
+
     },
     {
       title: "Luxury Triple Room",
       description: "An exceptional desert glamping experience featuring select units with an authentic fireplace, individual air conditioning, soundproof walls, private ensuite bathroom, and a spacious terrace looking out onto the red desert sands.",
       image: "/images/wadirum_campfire.jpg",
       fallbackImage: "/images/wadirum_stargazing.jpg",
-      amenities: ["Fireplace in Select Units", "Individual Air Conditioning", "Walk-in Shower & Toiletries", "Private Terrace with Views"],
+
     }
   ];
 
@@ -82,14 +82,7 @@ export default function AccommodationShowcase() {
                   {room.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 py-6 border-y border-border">
-                  {room.amenities.map((amenity, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-deep-navy font-medium">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {amenity}
-                    </div>
-                  ))}
-                </div>
+
 
                 <Button
                   variant="link"
