@@ -44,21 +44,26 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-24 px-4 md:px-8 bg-soft-beige/30">
-      <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Got Questions?</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy">Frequently Asked Questions</h2>
+    <section id="faq" className="py-16 sm:py-24 px-4 md:px-8 bg-[#FAF6F0] border-t border-[#E3DAC9]">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="font-[family-name:var(--font-montserrat)] text-xs uppercase tracking-[0.28em] font-semibold text-[#A8582C] mb-3">
+            Got Questions?
+          </p>
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl text-[#221C18] font-normal tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <div className="w-12 h-[1px] bg-[#A8582C]/40 mx-auto mt-4" />
         </div>
 
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-[#F5EFEB] rounded-3xl p-6 sm:p-10 border border-[#E3DAC9] shadow-sm">
           <Accordion className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="text-left font-heading text-lg text-deep-navy hover:text-primary transition-colors py-6">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-[#E3DAC9]/70 last:border-0">
+                <AccordionTrigger className="text-left font-[family-name:var(--font-playfair)] text-base sm:text-lg text-[#221C18] hover:text-[#A8582C] transition-colors py-5 sm:py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent className="font-[family-name:var(--font-outfit)] text-sm sm:text-[15px] text-[#5B4C43] leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

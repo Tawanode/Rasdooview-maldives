@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import FAQSection from "@/components/FAQSection";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -464,6 +465,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* 4. Frequently Asked Questions */}
+      <FAQSection />
     </div>
   );
 }

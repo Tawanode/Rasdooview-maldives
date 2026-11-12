@@ -17,10 +17,10 @@ export default function DiscoverWadiRum() {
   return (
     <section className="py-24 md:py-32 bg-deep-navy text-warm-sand overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 md:px-8">
-        
+
         {/* Storytelling Section */}
         <div className="flex flex-col lg:flex-row gap-16 items-center mb-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -35,12 +35,10 @@ export default function DiscoverWadiRum() {
             <p className="text-warm-sand/80 leading-relaxed text-lg pt-4">
               Perfectly positioned in the Disah district of the Wadi Rum Protected Area, our camp serves as the ultimate base for exploring iconic red sand dunes and ancient rock formations.
             </p>
-            <p className="text-warm-sand/80 leading-relaxed">
-              Tucked away from crowded tourist routes, our intimate 11-unit camp provides immediate access to classic Wadi Rum desert tour routes, towering sandstone cliffs, and awe-inspiring night skies, all while ensuring total tranquility and authentic Bedouin hospitality.
-            </p>
+
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -48,9 +46,9 @@ export default function DiscoverWadiRum() {
             className="flex-1 w-full"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <img 
-                src="/images/wadirum_mountains.jpg" 
-                alt="Wadi Rum Protected Area dramatic red sandstone mountains" 
+              <img
+                src="/images/wadirum_mountains.jpg"
+                alt="Wadi Rum Protected Area dramatic red sandstone mountains"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -59,7 +57,7 @@ export default function DiscoverWadiRum() {
 
         {/* Getting There Timeline */}
         <div id="getting-here" className="max-w-4xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -77,7 +75,7 @@ export default function DiscoverWadiRum() {
             <div className="space-y-12">
               {/* Step 1 */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -88,16 +86,15 @@ export default function DiscoverWadiRum() {
                   <p className="text-sm text-warm-sand/60 mt-1">61 km from our camp in Wadi Rum</p>
                 </motion.div>
                 <div className="absolute left-0 top-0 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${
-                      activeStep === 0 
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]" 
+                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 0
+                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
                         : "bg-deep-navy text-primary shadow-none"
-                    }`}
+                      }`}
                   >
                     <Plane size={24} />
                   </motion.div>
@@ -109,21 +106,20 @@ export default function DiscoverWadiRum() {
               <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 mt-12 md:mt-0">
                 <div className="md:w-[45%] md:text-right pl-20 md:pl-0 hidden md:block" />
                 <div className="absolute left-0 top-0 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
-                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${
-                      activeStep === 1 
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]" 
+                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 1
+                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
                         : "bg-deep-navy text-primary shadow-none"
-                    }`}
+                      }`}
                   >
                     <Car size={24} />
                   </motion.div>
                 </div>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -137,7 +133,7 @@ export default function DiscoverWadiRum() {
 
               {/* Step 3 */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 mt-12 md:mt-0">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -148,16 +144,15 @@ export default function DiscoverWadiRum() {
                   <p className="text-sm text-warm-sand/60 mt-1">Bedouin welcome tea, 24-hour reception & check-in</p>
                 </motion.div>
                 <div className="absolute left-0 top-0 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 1.0, type: "spring" }}
-                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${
-                      activeStep === 2 
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]" 
+                    className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 2
+                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
                         : "bg-deep-navy text-primary shadow-none"
-                    }`}
+                      }`}
                   >
                     <MapPin size={24} />
                   </motion.div>

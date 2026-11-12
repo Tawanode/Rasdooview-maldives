@@ -8,7 +8,6 @@ import DiscoverWadiRum from "@/components/DiscoverWadiRum";
 import ActivitiesExcursions from "@/components/ActivitiesExcursions";
 import ImageGallery from "@/components/ImageGallery";
 import GuestReviews from "@/components/GuestReviews";
-import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
       <ActivitiesExcursions />
       <ImageGallery />
       <GuestReviews />
-      <FAQSection />
     </>
   );
 }

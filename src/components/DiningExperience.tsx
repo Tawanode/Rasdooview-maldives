@@ -10,7 +10,7 @@ export default function DiningExperience() {
     "Continental, English/Irish & Buffet Breakfast",
     "Outdoor BBQ Facilities"
   ];
-  
+
   const diningServices = [
     "In-Room Grocery Delivery",
     "Room Service",
@@ -24,8 +24,8 @@ export default function DiningExperience() {
     <section id="dining" className="py-24 md:py-32 px-4 md:px-8 bg-white overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -33,15 +33,15 @@ export default function DiningExperience() {
             className="flex-1 w-full"
           >
             <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square rounded-full md:rounded-2xl lg:rounded-full overflow-hidden shadow-2xl">
-              <img 
-                src="/images/wadirum_zarb_dinner.jpg" 
-                alt="Traditional Bedouin Zarb dinner at Wadi Rum Bella Rose Luxury Camp" 
+              <img
+                src="/images/wadirum_zarb_dinner.jpg"
+                alt="Traditional Bedouin Zarb dinner at Wadi Rum Bella Rose Luxury Camp"
                 className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -65,8 +65,8 @@ export default function DiningExperience() {
                 <h4 className="font-heading text-xl text-deep-navy mb-4">Dining Highlights</h4>
                 <ul className="space-y-2">
                   {diningHighlights.map((item, i) => (
-                    <li 
-                      key={i} 
+                    <li
+                      key={i}
                       className={`items-center gap-2 text-sm text-muted-foreground ${i >= diningHighlights.length - 2 ? "hidden md:flex" : "flex"}`}
                     >
                       <div className="w-1 h-1 rounded-full bg-primary shrink-0" /> <span>{item}</span>
@@ -78,8 +78,8 @@ export default function DiningExperience() {
                 <h4 className="font-heading text-xl text-deep-navy mb-4">Services & Comforts</h4>
                 <ul className="space-y-2">
                   {diningServices.map((item, i) => (
-                    <li 
-                      key={i} 
+                    <li
+                      key={i}
                       className={`items-center gap-2 text-sm text-muted-foreground ${i >= diningServices.length - 3 ? "hidden md:flex" : "flex"}`}
                     >
                       <div className="w-1 h-1 rounded-full bg-primary shrink-0" /> <span>{item}</span>
