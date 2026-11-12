@@ -44,7 +44,7 @@ export default function RoomAmenities() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {categories.map((category, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +55,8 @@ export default function RoomAmenities() {
               <h3 className="font-heading text-xl text-primary border-b border-border pb-2">{category.title}</h3>
               <ul className="space-y-4">
                 {category.items.map((item, i) => (
-                  <li 
-                    key={i} 
+                  <li
+                    key={i}
                     className={`items-center gap-4 text-deep-navy ${i === 3 ? "hidden md:flex" : "flex"}`}
                   >
                     <div className="bg-white p-2 rounded-lg shadow-sm text-primary">

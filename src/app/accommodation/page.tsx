@@ -20,7 +20,7 @@ export default function AccommodationPage() {
           <h1 className="font-heading text-5xl md:text-6xl text-deep-navy mb-6">
             Our Luxury <span className="text-muted-foreground/60">Tents & Units</span>
           </h1>
-          <p className="text-muted-foreground leading-relaxed text-lg">
+          <p className="hidden md:block text-muted-foreground leading-relaxed text-lg">
             Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Featuring family and interconnected options, every unit provides a quiet, private space with stunning mountain views.
           </p>
         </motion.div>
