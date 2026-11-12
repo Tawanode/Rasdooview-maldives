@@ -20,7 +20,7 @@ export default function HeroSection() {
       className="relative w-full flex flex-col md:min-h-[100svh] md:justify-between overflow-visible z-20 bg-warm-sand"
     >
       {/* 1. Full-Bleed Background Image with Parallax & Slow Cinematic Zoom */}
-      <div className="relative h-[72svh] sm:h-[78svh] md:h-auto md:absolute md:inset-0 w-full overflow-hidden z-0 flex flex-col justify-between">
+      <div className="relative h-[100svh] min-h-[100svh] md:h-auto md:absolute md:inset-0 w-full overflow-hidden z-0 flex flex-col justify-between">
         <motion.div
           initial={{ scale: 1 }}
           animate={{ scale: 1.04 }}
@@ -73,7 +73,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom spacer on mobile for visual breathing room */}
-        <div className="h-8 md:hidden relative z-20" />
+        <div className="h-24 md:hidden relative z-20" />
       </div>
 
       {/* Bottom Floating Booking Bar:
@@ -84,7 +84,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.85, delay: 0.5 }}
-        className="relative z-30 w-full max-w-6xl mx-auto px-4 md:px-8 pt-5 pb-2 md:pt-0 md:pb-0 md:translate-y-[82%] shrink-0 pointer-events-auto md:mt-auto"
+        className="relative z-30 w-full max-w-6xl mx-auto px-4 md:px-8 pt-8 pb-3 md:pt-0 md:pb-0 md:translate-y-[82%] shrink-0 pointer-events-auto md:mt-auto"
       >
         <BookingBar embedded />
       </motion.div>
