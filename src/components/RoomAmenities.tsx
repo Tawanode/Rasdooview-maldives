@@ -11,7 +11,7 @@ export default function RoomAmenities() {
         { icon: <Snowflake size={20} />, name: "Individual Air Conditioning" },
         { icon: <VolumeX size={20} />, name: "Soundproof Walls" },
         { icon: <Bath size={20} />, name: "Walk-in Shower & Toiletries" },
-        { icon: <Mountain size={20} />, name: "Private Mountain View Terrace" },
+
       ]
     },
     {
@@ -20,7 +20,7 @@ export default function RoomAmenities() {
         { icon: <Utensils size={20} />, name: "Traditional Bedouin Zarb Dinners" },
         { icon: <Coffee size={20} />, name: "Continental, Irish & Buffet Breakfast" },
         { icon: <Utensils size={20} />, name: "Middle Eastern, African & Catalan Cuisine" },
-        { icon: <Flame size={20} />, name: "Outdoor BBQ & Room Service" },
+
       ]
     },
     {
@@ -29,7 +29,7 @@ export default function RoomAmenities() {
         { icon: <Wifi size={20} />, name: "Exceptional Free Wi-Fi" },
         { icon: <Compass size={20} />, name: "4x4 Jeep Tours & Camel Rides" },
         { icon: <Flame size={20} />, name: "Evening Campfire & Bedouin Music" },
-        { icon: <Clock size={20} />, name: "24-Hour Front Desk & Free Parking" },
+
       ]
     }
   ];

@@ -33,9 +33,7 @@ export default function WelcomeSection() {
               <p className="hidden md:block text-muted-foreground leading-relaxed">
                 Designed for travelers who seek both adventure and comfort, our accommodations provide modern luxuries like air conditioning, soundproof walls, and private ensuite bathrooms right in the middle of the desert.
               </p>
-              <p className="hidden md:block text-muted-foreground leading-relaxed">
-                Whether you are stargazing by the outdoor fireplace, enjoying a traditional Bedouin Zarb dinner, or exploring the red sand dunes on a 4x4 Jeep tour, we offer a peaceful and unforgettable Bedouin experience with world-class hospitality.
-              </p>
+
 
             </div>
 

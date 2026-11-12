@@ -8,7 +8,7 @@ export default function AccommodationShowcase() {
   const rooms = [
     {
       title: "Double Room with Mountain View",
-      description: "Enjoy an exclusive and relaxing stay in our thoughtfully designed desert accommodations. Every unit provides a quiet, private space with individual air conditioning, private ensuite bathroom with walk-in shower, soundproof walls, and stunning mountain views from your private terrace.",
+      description: "Every unit provides a quiet, private space with individual air conditioning, private ensuite bathroom with walk-in shower, soundproof walls, and stunning mountain views from your private terrace.",
       image: "/images/wadirum_room_interior.jpg",
       fallbackImage: "/images/wadirum_camp_exterior.jpg",
 
@@ -22,14 +22,14 @@ export default function AccommodationShowcase() {
     },
     {
       title: "Triple Room with Mountain View",
-      description: "Comfortably configured for three guests or families traveling together. Enjoy private ensuite amenities, individual air conditioning for complete climate comfort, soundproof tranquility, and expansive desert mountain vistas.",
+      description: "Comfortably configured for three guests or families traveling together. Enjoy private ensuite amenities and expansive desert mountain vistas.",
       image: "/images/wadirum_sand_dunes.jpg",
       fallbackImage: "/images/wadirum_sunset.jpg",
 
     },
     {
       title: "Luxury Triple Room",
-      description: "An exceptional desert glamping experience featuring select units with an authentic fireplace, individual air conditioning, soundproof walls, private ensuite bathroom, and a spacious terrace looking out onto the red desert sands.",
+      description: "An exceptional desert glamping experience featuring select units with an authentic fireplace, private ensuite bathroom, and a spacious terrace looking out onto the red desert sands.",
       image: "/images/wadirum_campfire.jpg",
       fallbackImage: "/images/wadirum_stargazing.jpg",
 

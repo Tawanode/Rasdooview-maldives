@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 export default function ActivitiesExcursions() {
   const activities = [
-    { title: "4x4 Jeep Tours", desc: "Explore towering sandstone arches, dramatic canyons, and historic landmarks, bookable via our tour desk." },
-    { title: "Camel Rides", desc: "Experience the timeless rhythm of the desert on a peaceful guided camel trek across golden dunes." },
-    { title: "Sandboarding", desc: "Experience the thrill of gliding down the spectacular red sand dunes right in our desert backyard." },
-    { title: "Campfire & Bedouin Music", desc: "Gather around the outdoor fireplace for evening entertainment, traditional Bedouin music, and warm mint tea." },
-    { title: "Spectacular Stargazing", desc: "Marvel at crystal-clear celestial vistas and the Milky Way stretching across dark, unpolluted desert skies." },
-    { title: "Fitness Center & Solarium", desc: "Keep up with your wellness routine in our fitness center and relax on the panoramic desert sun terrace." },
+    { title: "4x4 Jeep Tours", desc: "Explore towering sandstone arches, dramatic canyons." },
+    { title: "Camel Rides", desc: "Experience the timeless rhythm of the desert on a guided camel trek." },
+    { title: "Sandboarding", desc: "Experience the thrill of gliding down the red sand dunes in our desert backyard." },
+    { title: "Campfire & Bedouin Music", desc: "Gather around the outdoor fireplace for evening entertainment." },
+    { title: "Spectacular Stargazing", desc: "Marvel at crystal-clear celestial vistas." },
+    { title: "Fitness Center & Solarium", desc: "Keep up with your wellness routine in our fitness center." },
   ];
 
   const slideshowImages = [

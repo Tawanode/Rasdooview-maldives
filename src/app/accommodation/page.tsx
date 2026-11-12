@@ -2,20 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowRight, 
-  Wifi, 
-  Wind, 
-  Coffee, 
-  Utensils, 
-  Mountain, 
-  Bath, 
-  Flame, 
-  ShieldCheck, 
-  Compass, 
-  Sparkles, 
-  Users, 
-  Crown 
+import {
+  ArrowRight,
+  Wifi,
+  Wind,
+  Coffee,
+  Utensils,
+  Mountain,
+  Bath,
+  Flame,
+  ShieldCheck,
+  Compass,
+  Sparkles,
+  Users,
+  Crown,
+  Snowflake
 } from "lucide-react";
 
 export default function AccommodationPage() {
@@ -90,47 +91,82 @@ export default function AccommodationPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-xl relative z-20 mx-0 lg:mx-12"
+          className="bg-[#FAF6F0]/95 backdrop-blur-xl rounded-3xl p-7 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(34,28,24,0.1)] border border-[#E5DAC8] relative z-20 mx-0 lg:mx-6"
         >
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pb-8 border-b border-[#E5DAC8]/80">
             <div>
-              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-3">Unit Highlights</p>
-              <h2 className="font-heading text-3xl md:text-4xl text-deep-navy mb-4">Intimate 11-Unit Desert Haven</h2>
-
+              <p className="font-[family-name:var(--font-montserrat)] text-xs uppercase tracking-[0.28em] font-semibold text-[#A8582C] mb-2.5">
+                Unit Highlights
+              </p>
+              <h2 className="font-[family-name:var(--font-el-messiri)] text-2xl sm:text-3xl md:text-4xl text-[#221C18] font-normal tracking-tight mb-3">
+                Intimate 11-Unit Desert Haven
+              </h2>
+              <p className="font-[family-name:var(--font-montserrat)] text-xs sm:text-sm text-[#5B4C43] max-w-2xl leading-relaxed">
+                Tucked in the peaceful Disah district, every unit offers an exclusive sanctuary with individual climate control, ensuite bath, and dramatic sandstone views.
+              </p>
             </div>
             <Button
-              className="bg-[#0b382d] hover:bg-[#07241c] text-white rounded-md px-8 py-6 text-sm font-medium tracking-wide transition-colors shrink-0"
+              className="bg-[#0b382d] hover:bg-[#07241c] text-white rounded-xl px-7 py-6 text-xs uppercase tracking-[0.2em] font-semibold transition-all hover:shadow-lg hover:scale-[1.02] shrink-0"
               onClick={() => {
                 window.dispatchEvent(new CustomEvent("open-booking-modal"));
               }}
             >
-              CHECK AVAILABILITY <ArrowRight size={16} className="ml-2" />
+              Check Availability <ArrowRight size={15} className="ml-2.5" />
             </Button>
           </div>
 
-          {/* Amenities Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* 4 Feature Highlights Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 pt-8">
             {[
-              { icon: Bath, title: "PRIVATE BATHROOM", desc: "Ensuite walk-in shower, bathrobes, bidet, and toiletries." },
-              { icon: Wind, title: "AIR CONDITIONING", desc: "Individual AC essential for desert climate and soundproof walls." },
-              { icon: Mountain, title: "MOUNTAIN VIEW TERRACE", desc: "Private terrace or balcony with landmark mountain panoramas." },
-              { icon: Wifi, title: "EXCEPTIONAL FREE WI-FI", desc: "Reliable high-speed connection throughout every unit." }
+              {
+                icon: Crown,
+                title: "ONLY 11 UNITS",
+                desc: "Intimate and quiet glamping experience away from large tour buses."
+              },
+              {
+                icon: Snowflake,
+                title: "INDIVIDUAL A/C",
+                desc: "Custom climate control essential for daytime desert heat & cool nights."
+              },
+              {
+                icon: Bath,
+                title: "ENSUITE BATHROOM",
+                desc: "Private walk-in shower, bathrobes, bidet, and toiletries in every unit."
+              },
+              {
+                icon: Mountain,
+                title: "MOUNTAIN TERRACE",
+                desc: "Private outdoor terrace offering front-row views of red sandstone formations."
+              }
             ].map((feature, i) => (
-              <div key={i} className="bg-warm-sand/50 p-6 rounded-2xl">
-                <feature.icon className="text-primary mb-4" size={24} />
-                <h4 className="text-xs font-bold tracking-wider text-deep-navy mb-2 uppercase">{feature.title}</h4>
-                <p className="text-sm text-muted-foreground">{feature.desc}</p>
+              <div 
+                key={i} 
+                className="bg-[#FAF6EE] p-5 sm:p-6 rounded-2xl border border-[#E8DFD1] hover:border-[#A8582C]/40 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white border border-[#E2D8C7] flex items-center justify-center text-[#A8582C] mb-3.5 shadow-xs group-hover:bg-[#A8582C] group-hover:text-white transition-colors">
+                  <feature.icon size={19} strokeWidth={1.6} />
+                </div>
+                <h4 className="font-[family-name:var(--font-montserrat)] text-xs font-bold tracking-wider text-[#221C18] mb-1.5 uppercase">
+                  {feature.title}
+                </h4>
+                <p className="font-[family-name:var(--font-outfit)] text-xs sm:text-[13px] text-[#6E5D53] leading-relaxed">
+                  {feature.desc}
+                </p>
               </div>
             ))}
           </div>
         </motion.div>
 
         {/* Detailed Information Section */}
-        <div className="mt-32">
+        <div className="mt-28 md:mt-32">
           <div className="mb-12 max-w-3xl">
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-4">Thoughtfully Designed</p>
-            <h2 className="font-heading text-4xl text-deep-navy mb-6">Four Distinct Desert Accommodations</h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="font-[family-name:var(--font-montserrat)] text-xs uppercase tracking-[0.28em] font-semibold text-[#A8582C] mb-3">
+              Thoughtfully Designed
+            </p>
+            <h2 className="font-[family-name:var(--font-el-messiri)] text-3xl md:text-4xl text-[#221C18] mb-4 font-normal">
+              Four Distinct Desert Accommodations
+            </h2>
+            <p className="font-[family-name:var(--font-montserrat)] text-sm sm:text-base text-[#5B4C43] leading-relaxed">
               Designed for travelers who seek both adventure and comfort, our accommodations provide modern luxuries right in the middle of the Wadi Rum Protected Area.
             </p>
           </div>
@@ -141,21 +177,21 @@ export default function AccommodationPage() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-1/3 bg-white rounded-3xl p-8 shadow-sm border border-border/50 sticky top-32 w-full"
+              className="lg:w-1/3 bg-white rounded-3xl p-8 shadow-sm border border-[#E3DAC9] sticky top-32 w-full"
             >
-              <h3 className="font-heading text-2xl text-deep-navy mb-8">Unit essentials</h3>
-              <ul className="space-y-6">
+              <h3 className="font-[family-name:var(--font-playfair)] text-2xl text-[#221C18] mb-6">
+                Unit Essentials
+              </h3>
+              <ul className="space-y-5">
                 {[
                   "Individual air conditioning (crucial for desert heat)",
                   "Private ensuite bathroom with walk-in shower & bathrobes",
                   "Private terrace or balcony with mountain views",
                   "Soundproof walls for ultimate peace & quiet",
-                  "Exceptional free Wi-Fi",
-                  "Coffee machine and dedicated desk",
                   "Fireplace (available in select deluxe and luxury units)"
                 ].map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start text-muted-foreground text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                  <li key={i} className="flex gap-3.5 items-start font-[family-name:var(--font-montserrat)] text-sm text-[#5B4C43]">
+                    <span className="w-1.5 h-1.5 rotate-45 bg-[#A8582C] mt-2 shrink-0 rounded-[1px]" />
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -167,10 +203,14 @@ export default function AccommodationPage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-2/3 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50 w-full"
+              className="lg:w-2/3 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-[#E3DAC9] w-full"
             >
-              <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs mb-6">Property Categories</p>
-              <h3 className="font-heading text-3xl text-deep-navy mb-10">Our Room Categories</h3>
+              <p className="font-[family-name:var(--font-montserrat)] text-xs uppercase tracking-[0.28em] font-semibold text-[#A8582C] mb-3">
+                Property Categories
+              </p>
+              <h3 className="font-[family-name:var(--font-playfair)] text-3xl text-[#221C18] mb-8 font-normal">
+                Our Room Categories
+              </h3>
 
               <div className="space-y-6 mb-12">
                 {[

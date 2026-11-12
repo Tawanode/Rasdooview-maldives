@@ -8,7 +8,7 @@ export default function DiningExperience() {
     "Family-Friendly On-Site Restaurant",
     "Middle Eastern, African & Catalan Cuisines",
     "Continental, English/Irish & Buffet Breakfast",
-    "Outdoor BBQ Facilities"
+
   ];
 
   const diningServices = [
@@ -16,8 +16,7 @@ export default function DiningExperience() {
     "Room Service",
     "Communal Bedouin Tea by the Campfire",
     "Fresh Locally Prepared Ingredients",
-    "Outdoor Dining Under the Stars",
-    "Coffee & Tea Facilities"
+    "Outdoor Dining Under the Stars"
   ];
 
   return (
@@ -57,7 +56,7 @@ export default function DiningExperience() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              Experience the true culinary soul of the desert at our family-friendly on-site restaurant. Savor our signature Bedouin Zarb dinner—tender meats and seasoned vegetables slow-cooked subterranean in an underground sand oven beneath glowing desert embers. Enjoy diverse dishes spanning Middle Eastern, African, and Catalan cuisines, alongside comprehensive breakfast options.
+              Experience the true culinary soul of the desert at our family-friendly on-site restaurant. Savor our signature Bedouin Zarb dinner—tender meats and seasoned vegetables.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-border">
