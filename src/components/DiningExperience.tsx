@@ -49,7 +49,7 @@ export default function DiningExperience() {
             className="flex-1 space-y-8"
           >
             <div>
-              <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Dining Experience</p>
+
               <h2 className="font-heading text-4xl md:text-5xl text-deep-navy leading-tight mb-6">
                 Authentic Bedouin Zarb & <br />
                 <span className="font-accent italic text-primary">Desert Dining</span>

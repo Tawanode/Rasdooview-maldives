@@ -38,7 +38,7 @@ export default function RoomAmenities() {
     <section className="py-16 md:py-24 px-4 md:px-8 bg-warm-sand border-y border-border">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">Property Features</p>
+
           <h2 className="font-heading text-3xl md:text-4xl text-deep-navy">Camp Facilities & Amenities</h2>
         </div>
 

@@ -27,7 +27,7 @@ export default function DiscoverWadiRum() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-6"
           >
-            <p className="text-primary font-medium tracking-widest uppercase text-sm">Location & Setting</p>
+
             <h2 className="font-heading text-4xl md:text-5xl leading-tight text-white">
               Explore the Wonders <br />
               <span className="font-accent italic text-primary bg-white px-3 py-1 inline-block mt-2">of Wadi Rum</span>
@@ -92,8 +92,8 @@ export default function DiscoverWadiRum() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
                     className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 0
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
-                        : "bg-deep-navy text-primary shadow-none"
+                      ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
+                      : "bg-deep-navy text-primary shadow-none"
                       }`}
                   >
                     <Plane size={24} />
@@ -112,8 +112,8 @@ export default function DiscoverWadiRum() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
                     className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 1
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
-                        : "bg-deep-navy text-primary shadow-none"
+                      ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
+                      : "bg-deep-navy text-primary shadow-none"
                       }`}
                   >
                     <Car size={24} />
@@ -150,8 +150,8 @@ export default function DiscoverWadiRum() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 1.0, type: "spring" }}
                     className={`w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center transition-colors transition-shadow duration-700 ease-in-out ${activeStep === 2
-                        ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
-                        : "bg-deep-navy text-primary shadow-none"
+                      ? "bg-primary text-white shadow-[0_0_30px_rgba(0,163,163,0.8)]"
+                      : "bg-deep-navy text-primary shadow-none"
                       }`}
                   >
                     <MapPin size={24} />

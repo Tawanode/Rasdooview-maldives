@@ -33,7 +33,7 @@ export default function GuestReviews() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-xl">
-            <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Testimonials</p>
+
             <h2 className="font-heading text-4xl md:text-5xl text-white mb-4">What Our Guests Say</h2>
             <p className="text-warm-sand/80 text-base mb-6 leading-relaxed">
               Discover why travelers rate us 9.9/10 and appreciate the peaceful surroundings, exceptional cleanliness, and warm Bedouin hospitality.

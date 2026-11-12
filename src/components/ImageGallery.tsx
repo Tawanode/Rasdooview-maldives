@@ -18,7 +18,7 @@ export default function ImageGallery() {
     <section id="gallery" className="py-24 md:py-32 px-4 md:px-8 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Camp Gallery</p>
+
           <h2 className="font-heading text-4xl md:text-5xl text-deep-navy">Moments in the Jordanian Desert</h2>
         </div>
 

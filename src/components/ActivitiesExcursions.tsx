@@ -32,16 +32,16 @@ export default function ActivitiesExcursions() {
   return (
     <section id="experiences" className="py-24 md:py-32 px-4 md:px-8 bg-soft-beige/20">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">Desert Adventures</p>
-          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-6">Unforgettable Desert Experiences</h2>
-          <p className="text-muted-foreground leading-relaxed">
+          <h2 className="font-heading text-4xl md:text-5xl text-deep-navy mb-4 md:mb-6">Unforgettable Desert Experiences</h2>
+          <p className="hidden md:block text-muted-foreground leading-relaxed">
             From thrilling 4x4 Jeep tours across red dunes to quiet evenings of Bedouin music by the open fire, our tour desk will curate your ideal desert itinerary.
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -50,15 +50,14 @@ export default function ActivitiesExcursions() {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative group">
               {slideshowImages.map((img, idx) => (
-                <div 
+                <div
                   key={idx}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    idx === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    }`}
                 >
-                  <img 
-                    src={img.src} 
-                    alt={img.title} 
+                  <img
+                    src={img.src}
+                    alt={img.title}
                     className="w-full h-full object-cover transition-transform duration-[5000ms] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10" />
@@ -77,7 +76,7 @@ export default function ActivitiesExcursions() {
 
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
             {activities.map((activity, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
